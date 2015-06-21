@@ -1,0 +1,39 @@
+#include <iostream>
+#include <vector>
+#include <alogrithm>
+using namespace std;
+
+int main ()
+{
+    vector<pair<int,double> > v1(8);
+    vector<pari<int,double> > v2(8);
+    vector<pari<int,double> > v3(8);
+    vector<pair<int,double> > tmp;
+    for (auto &i : v1) cin >> i.second >> i.first;
+    for (auto &i : v2) cin >> i.second >> i.first;
+    for (auto &i : v3) cin >> i.second >> i.first;
+    sort(v1.begin(), v1.end());
+    sort(v2.begin(), v2.end());
+    sort(v3.begin(), v3.end());
+
+    cout << v1[0].second << " " << v1[0].first << endl;
+    cout << v1[1].second << " " << v1[1].first << endl;
+    cout << v2[0].second << " " << v2[0].first << endl;
+    cout << v2[1].second << " " << v2[1].first << endl;
+    cout << v3[0].second << " " << v3[0].first << endl;
+    cout << v3[1].second << " " << v3[1].first << endl;
+
+    tmp.push_back(v1[2]);
+    tmp.push_back(v1[3]);
+    tmp.push_back(v2[2]);
+    tmp.push_back(v2[3]);
+    tmp.push_back(v3[2]);
+    tmp.push_back(v3[3]);
+
+    sort(tmp.begin(), tmp.end());
+
+    cout << tmp[0].second << " " << tmp[0].first << endl;
+    cout << tmp[1].second << " " << tmp[1].first << endl;
+
+    return 0;
+}

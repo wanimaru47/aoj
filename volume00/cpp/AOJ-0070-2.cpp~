@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int dfs (int n, int sum, int t) {
+    if (t == 0)
+        return 
+}
+
+int main ()
+{
+    int n, s;
+    while (cin >> n >> s) {
+        
+    }
+
+    return 0;
+}

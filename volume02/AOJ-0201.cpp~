@@ -1,0 +1,38 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <string>
+#include <map>
+#include <sstream>
+#include <queue>
+using namespace std;
+
+int main ()
+{
+    int n;
+    while (cin >> n) {
+        vector<string> v(n);
+        vector<int> cost(n);
+        map<string,int> atm;
+        for (int i = 0; i < n; i++) {
+            int b; string a;
+            cin >> a >> b;
+            atm[a] = b;
+        }
+        int m;  cin >> m;
+        map<string,queue<string> > rcp;
+
+        string str;
+        getline(cin, str);
+        for (int i = 0; i < m; i++) {
+            string str; int t;
+            cin >> str >> t;
+            for (int j = 0; j < t; j++) {
+                string s; cin >> s;
+                rcp[str].push(s);
+            }
+        }
+    }
+
+    return 0;
+}

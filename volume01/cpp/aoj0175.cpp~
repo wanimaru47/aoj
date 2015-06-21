@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+    int n;
+    const int MOD = 4;
+    while (cin >> n, n != -1) {
+        int res = 0;
+        int pos = 1;
+        while (n > 0) {
+            n += pos * (n - (n >> 3));
+            n = n >> 3;
+            pos *= 10;
+        }
+    }
+
+    return 0;
+}

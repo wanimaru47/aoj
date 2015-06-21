@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+const int INF = 1 << 28;
+
+int main ()
+{
+    int R[] = {0x00, 0x00, 0x00, 0x00, 0xff, 0xff, 0xff, 0xff};
+    int G[] = {0x00, 0x00, 0xff, 0xff, 0x00, 0x00, 0xff, 0xff};
+    int B[] = {0x00, 0xff, 0x00, 0xff, 0x00, 0xff, 0x00, 0xff};
+    string color[] = {"black", "blue", "lime", "aqua", "red", "fuchsia", "yellow", "white"};
+
+    string str;
+    while (cin >> str, str != "0") {
+        int r = (str[1] - '0') * 16 + (str[2] - '0');
+        int g = (str[3] - '0') * 16 + (str[4] - '0');
+        int b = (str[5] - '0') * 16 + (str[6] - '0');
+
+        int D = INF;
+        string res;
+        for (int i = 0; i < 8; i++) {
+            int d = ((R[i] - r) * (R[i] - r) + (G[i] - g) * (G[i] - g) + (B[i] - b) * (B[i] - b));
+            // cout << "> " << d << endl;
+            if (d < D) {
+                res = color[i];
+                D = d;
+            }
+        }
+        cout << res << endl;
+    }
+
+    return 0;
+}

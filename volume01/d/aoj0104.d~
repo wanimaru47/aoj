@@ -1,0 +1,34 @@
+import std.stdio;
+import std.string;
+import std.conv;
+import std.algorithm;
+
+union P {
+    int first;
+    int second;
+}
+
+int main()
+{
+    while (true) {
+        string[] str = readln().chomp().split();
+        int h = str[0].to!int();
+        int w = str[1].to!int();
+        if (h == 0 && w == 0) break;
+        string[100] f;
+        for (int i = 0; i < h; i++)
+            f[i] = readln.chomp;
+
+        P[string] m;
+        m['>'] = {first:0, second:1};
+        m['<'] = {first:0, second:-1};
+        m['^'] = {first:1, second:0};
+        m['v'] = {first:-1, second:0};
+        m['.'] = {first:0, second:0};
+
+        int x = 0, y = 0;
+        while (
+    }
+
+    return 0;
+}

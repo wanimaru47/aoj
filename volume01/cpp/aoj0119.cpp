@@ -1,0 +1,56 @@
+#include <iostream>
+#include <cstdio>
+#include <map>
+#include <vector>
+#include <cstring>
+#include <algorithm>
+#include <list>
+#include <stack>
+#include <queue>
+using namespace std;
+
+typedef list<int> L;
+typedef pair <int,int> P;
+typedef vector<int> V;
+typedef queue<int> Q;
+typedef stack<int> S;
+typedef map<string,int> M;
+
+const int MAX = 20;
+
+int n, m, p1, p2;
+V v[MAX + 1];
+
+int main()
+{
+    cin >> n >> m;
+    for (int i = 0; i < m; i++) {
+        cin >> p1 >> p2;
+        v[p1].push_back(p2);
+    }
+    int res[MAX + 1], maxR = 0;
+    for (int i = 1; i <= n; i++) res[i] = 1; //initialize rank
+
+    int s;
+    Q q;
+    for (int j = 1; j <= n; j++) {
+        q.push(j);
+        while (q.size()) {
+            s = q.front(); q.pop();
+            for (int i = 0; i < v[s].size(); i++) {
+                if (res[s] >= res[v[s][i]]) {
+                    res[v[s][i]] = res[s] + 1;
+                    maxR = max(maxR, res[v[s][i]]);
+                    q.push(v[s][i]);
+                }
+            }
+        }
+    }
+    
+    for (int i = 1; i <= maxR; i++)
+        for (int j = 1; j <= n; j++)
+            if (res[j] == i) 
+                cout << j << endl;
+
+    return 0;
+}

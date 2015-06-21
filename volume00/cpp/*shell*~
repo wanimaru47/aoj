@@ -1,0 +1,1393 @@
+wanimaru@wanimaru-System-Product-Name:~$ ls
+contestapplet.conf  contestapplet.conf.bak  Desktop  Documents  Downloads  Dropbox  examples.desktop  Library  local  Music  Pictures  Public  Templates  #test.txt#  Videos  VirtualBox VMs
+wanimaru@wanimaru-System-Product-Name:~$ ls
+contestapplet.conf  contestapplet.conf.bak  Desktop  Documents  Downloads  Dropbox  examples.desktop  Library  local  Music  Pictures  Public  Templates  #test.txt#  Videos  VirtualBox VMs
+wanimaru@wanimaru-System-Product-Name:~$ ls
+contestapplet.conf  contestapplet.conf.bak  Desktop  Documents  Downloads  Dropbox  examples.desktop  Library  local  Music  Pictures  Public  Templates  #test.txt#  Videos  VirtualBox VMs
+wanimaru@wanimaru-System-Product-Name:~$ cd Dropbox/Program
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program$ ls
+acmicpcpractice  aoj  ARI_BOOK  atcoder  codeforces  ef_cpp  git  hackerrank  icpc2014  lang_d  lib  pra  ruby  template.cpp  template.cpp~  test  #tmp.txt#  tmp.txt  tmp.txt~  topcoder  workspace
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program$ cd  aoj/
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj$ ls
+contest  DPL  test  #test.cpp#  test.cpp  test.cpp~  test.d  test.d~  test.o  volume0  volume1  volume100  volume11  volume2  volume20  volume5
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj$ cd volume0
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0$ ls
+aoj0042.d  aoj0043-2.d  aoj0043.d  cpp  d  rb
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0$ cd cpp/
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ls
+AOJ-0001.cpp  AOJ-0009.cpp  AOJ-0016.cpp  AOJ-0023.cpp  AOJ-0030.cpp  AOJ-0037.cpp    AOJ-0043.cpp  AOJ-0050.cpp  AOJ-0058.cpp    AOJ-0063.cpp     AOJ-0068.cpp    AOJ-0072.cpp~  AOJ-0079.cpp    AOJ-0082.cpp
+AOJ-0002.cpp  AOJ-0010.cpp  AOJ-0017.cpp  AOJ-0024.cpp  AOJ-0031.cpp  AOJ-0038.cpp    AOJ-0044.cpp  AOJ-0052.cpp  AOJ-0059-2.cpp  AOJ-0064.cpp     AOJ-0069-2.cpp  AOJ-0073.cpp   AOJ-0079.cpp~   AOJ-0082.cpp~
+AOJ-0003.cpp  AOJ-0011.cpp  AOJ-0018.cpp  AOJ-0025.cpp  AOJ-0032.cpp  AOJ-0039.cpp    AOJ-0045.cpp  AOJ-0053.cpp  AOJ-0059-3.cpp  AOJ-0065.cpp     AOJ-0069-3.cpp  AOJ-0074.cpp   AOJ-0080.cpp    AOJ-0091.cpp
+AOJ-0005.cpp  AOJ-0012.cpp  AOJ-0019.cpp  AOJ-0026.cpp  AOJ-0033.cpp  AOJ-0040.cpp    AOJ-0046.cpp  AOJ-0054.cpp  AOJ-0059.cpp    AOJ-0066.cpp     AOJ-0069.cpp    AOJ-0075.cpp   AOJ-0080.cpp~   AOJ-0097.cpp
+AOJ-0006.cpp  AOJ-0013.cpp  AOJ-0020.cpp  AOJ-0027.cpp  AOJ-0034.cpp  AOJ-0041.cpp    AOJ-0047.cpp  AOJ-0055.cpp  AOJ-0060.cpp    AOJ-0067.cpp     AOJ-0070.cpp    AOJ-0077.cpp   AOJ-0081.cpp    AOJ-0099.cpp
+AOJ-0007.cpp  AOJ-0014.cpp  AOJ-0021.cpp  AOJ-0028.cpp  AOJ-0035.cpp  AOJ-0042.cpp    AOJ-0048.cpp  AOJ-0056.cpp  AOJ-0061.cpp    AOJ-0068-2.cpp   AOJ-0071.cpp    AOJ-0078.cpp   AOJ-0081.cpp~   test
+AOJ-0008.cpp  AOJ-0015.cpp  AOJ-0022.cpp  AOJ-0029.cpp  AOJ-0036.cpp  AOJ-0043-2.cpp  AOJ-0049.cpp  AOJ-0057.cpp  AOJ-0062.cpp    AOJ-00688-2.cpp  AOJ-0072.cpp    AOJ-0078.cpp~  #AOJ-0082.cpp#
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ./test
+2 3 1 4 0 1 0 1 
+4 1 4 1 2 1 2 14 1 4 1 2 1 2 14 1 4 1 2 1 2 14 1 4 1 2 1 2 14 1 4 1 2 1 2 14 1 4 1 2 1 2 14 1 4 1 2 1 2 14 1 4 1 2 1 2 14 2 3 2 2 2 1 1 
+4 1 4 1 2 1 2 14 1 4 1 2 1 2 14 1 4 1 2 1 2 14 1 4 1 2 1 2 14 1 4 1 2 1 2 14 1 4 1 2 1 2 14 1 4 1 2 1 2 14 1 4 1 2 1 2 1wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ./test
+2 3 1 4 0 1 0 1 
+4 1 4 1 2 1 2 1
+4 2 3 2 2 2 1 1 
+4 1 4 1 2 1 2 1
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ./test
+2 3 1 4 0 1 0 1 
+414121210
+141212140
+412121410
+121214140
+212141410
+121414120
+214141210
+141412120
+4 1 4 1 2 1 2 1
+4 2 3 2 2 2 1 1 
+414121210
+141212140
+412121410
+121214140
+212141410
+121414120
+214141210
+141412120
+4 1 4 1 2 1 2 1
+
+414121210
+141212140
+412121410
+121214140
+212141410
+121414120
+214141210
+141412120
+4 1 4 1 2 1 2 1
+
+414121210
+141212140
+412121410
+121214140
+212141410
+121414120
+214141210
+141412120
+4 1 4 1 2 1 2 1
+
+414121210
+141212140
+412121410
+121214140
+212141410
+121414120
+214141210
+141412120
+4 1 4 1 2 1 2 1
+
+414121210
+141212140
+412121410
+121214140
+212141410
+121414120
+214141210
+141412120
+4 1 4 1 2 1 2 1
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ./test
+2 3 1 4 0 1 0 1 
+41412121
+14121214
+41212141
+12121414
+21214141
+12141412
+21414121
+14141212
+2 1 2 1 4 1 4 1
+4 2 3 2 2 2 1 1 
+41412121
+14121214
+41212141
+12121414
+21214141
+12141412
+21414121
+14141212
+4 1 4 1 2 1 2 1
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ./test
+2 3 1 4 0 1 0 1 
+41412121 +
+14121214
+41212141
+12121414
+21214141 +
+12141412
+21414121
+14141212
+2 1 2 1 4 1 4 1
+4 2 3 2 2 2 1 1 
+41412121 +
+14121214
+41212141
+12121414
+21214141
+12141412
+21414121
+14141212
+4 1 4 1 2 1 2 1
+
+41412121 +
+14121214
+41212141
+12121414
+21214141
+12141412
+21414121
+14141212
+4 1 4 1 2 1 2 1
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ./test
+2 3 1 4 0 1 0 1 
+41412121 3 +
+14121214 1 +
+41212141 3
+12121414 0 +
+21214141 0
+12141412 -2
+21414121 -2
+14141212 -4
+1 2 1 2 1 4 1 4
+4 2 3 2 2 2 1 1 
+41412121 0 +
+14121214 0 +
+41212141 1
+12121414 0 +
+21214141 1
+12141412 1
+21414121 2
+14141212 1
+1 2 1 2 1 4 1 4
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ./test
+2 3 1 4 0 1 0 1 
+41412121 3 +
+14121214 3 +
+41212141 3
+12121414 3 +
+21214141 0
+12141412 0
+21414121 0
+14141212 0
+1 2 1 2 1 4 1 4
+4 2 3 2 2 2 1 1 
+41412121 0 +
+14121214 0 +
+41212141 0
+12121414 0 +
+21214141 0
+12141412 0
+21414121 0
+14141212 0
+1 2 1 2 1 4 1 4
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ /\test
+bash: /test: No such file or directory
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ./test
+2 3 1 4 0 1 0 1 
+41412121 0 +
+14121214 0 +
+41212141 0
+12121414 0 +
+21214141 0
+12141412 0
+21414121 0
+14141212 0
+1 2 1 2 1 4 1 4
+4 2 3 2 2 2 1 1 
+41412121 0 +
+14121214 0 +
+41212141 0
+12121414 0 +
+21214141 0
+12141412 0
+21414121 0
+14141212 0
+1 2 1 2 1 4 1 4
+  C-c C-c
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ./test
+2 3 1 4 0 1 0 1 
+23140101
+41412121 0 +
+31401012
+14121214 0 +
+14010123
+41212141 0
+40101231
+12121414 0 +
+01012314
+21214141 0
+10123140
+12141412 0
+01231401
+21414121 0
+12314010
+14141212 0
+1 2 1 2 1 4 1 4
+4 2 3 2 2 2 1 1 
+42322211
+41412121 0 +
+23222114
+14121214 0 +
+32221142
+41212141 0
+22211423
+12121414 0 +
+22114232
+21214141 0
+21142322
+12141412 0
+11423222
+21414121 0
+14232221
+14141212 0
+1 2 1 2 1 4 1 4
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ./test
+2 3 1 4 0 1 0 1 
+41412121
+41412121 0 +
+14121214
+14121214 -2 +
+41212141
+41212141 0
+12121414
+12121414 -3 +
+21214141
+21214141 0
+12141412
+12141412 -2
+21414121
+21414121 -2
+14141212
+14141212 -4
+1 2 1 2 1 4 1 4
+4 2 3 2 2 2 1 1 
+41412121
+41412121 0 +
+14121214
+14121214 0 +
+41212141
+41212141 1
+12121414
+12121414 0 +
+21214141
+21214141 1
+12141412
+12141412 1
+21414121
+21414121 2
+14141212
+14141212 1
+1 2 1 2 1 4 1 4
+
+41412121
+41412121 0 +
+14121214
+14121214 0 +
+41212141
+41212141 1
+12121414
+12121414 0 +
+21214141
+21214141 1
+12141412
+12141412 1
+21414121
+21414121 2
+14141212
+14141212 1
+1 2 1 2 1 4 1 4
+
+41412121
+41412121 0 +
+14121214
+14121214 0 +
+41212141
+41212141 1
+12121414
+12121414 0 +
+21214141
+21214141 1
+12141412
+12141412 1
+21414121
+21414121 2
+14141212
+14141212 1
+1 2 1 2 1 4 1 4
+
+41412121
+41412121 0 +
+14121214
+14121214 0 +
+41212141
+41212141 1
+12121414
+12121414 0 +
+21214141
+21214141 1
+12141412
+12141412 1
+21414121
+21414121 2
+14141212
+14141212 1
+1 2 1 2 1 4 1 4
+
+41412121
+41412121 0 +
+14121214
+14121214 0 +
+41212141
+41212141 1
+12121414
+12121414 0 +
+21214141
+21214141 1
+12141412
+12141412 1
+21414121
+21414121 2
+14141212
+14141212 1
+1 2 1 2 1 4 1 4
+
+41412121
+41412121 0 +
+14121214
+14121214 0 +
+41212141
+41212141 1
+12121414
+12121414 0 +
+21214141
+21214141 1
+12141412
+12141412 1
+21414121
+21414121 2
+14141212
+14141212 1
+1 2 1 2 1 4 1 4
+
+41412121
+41412121 0 +
+14121214
+14121214 0 +
+41212141
+41212141 1
+12121414
+12121414 0 +
+21214141
+21214141 1
+12141412
+12141412 1
+21414121
+21414121 2
+14141212
+14141212 1
+1 2 1 2 1 4 1 4
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ 1 2 1 2 1 4 1 4
+1: command not found
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ./test
+2 3 1 4 0 1 0 1 
+41412121
+41412121 0 +
+14121214
+14121214 0 +
+41212141
+41212141 0
+12121414
+12121414 0 +
+21214141
+21214141 0
+12141412
+12141412 0
+21414121
+21414121 0
+14141212
+14141212 0
+1 2 1 2 1 4 1 4
+4 2 3 2 2 2 1 1 
+41412121
+41412121 0 +
+14121214
+14121214 0 +
+41212141
+41212141 0
+12121414
+12121414 0 +
+21214141
+21214141 0
+12141412
+12141412 0
+21414121
+21414121 0
+14141212
+14141212 0
+1 2 1 2 1 4 1 4
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ./test
+2 3 1 4 0 1 0 1 
+-22-33-20-20
+41412121 0 +
+2-33-20-20-2
+14121214 -2 +
+-33-20-20-22
+41212141 0
+3-20-20-22-3
+12121414 -3 +
+-20-20-22-33
+21214141 0
+0-20-22-33-2
+12141412 -2
+-20-22-33-20
+21414121 -2
+0-22-33-20-2
+14141212 -4
+1 2 1 2 1 4 1 4
+4 2 3 2 2 2 1 1 
+01-1101-10
+41412121 0 +
+1-1101-100
+14121214 0 +
+-1101-1001
+41212141 1
+101-1001-1
+12121414 0 +
+01-1001-11
+21214141 1
+1-1001-110
+12141412 1
+-1001-1101
+21414121 2
+001-1101-1
+14141212 1
+1 2 1 2 1 4 1 4
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ./test
+2 3 1 4 0 1 0 1 
+-22-33-20-20
+41412121 0 +
+2-33-20-20-2
+14121214 -2 +
+-33-20-20-22
+41212141 0
+3-20-20-22-3
+12121414 -3 +
+-20-20-22-33
+21214141 0
+0-20-22-33-2
+12141412 -2
+-20-22-33-20
+21414121 -2
+0-22-33-20-2
+14141212 -4
+1 2 1 2 1 4 1 4
+4 2 3 2 2 2 1 1 
+01-1101-10
+41412121 0 +
+1-1101-100
+14121214 0 +
+-1101-1001
+41212141 1
+101-1001-1
+12121414 0 +
+01-1001-11
+21214141 1
+1-1001-110
+12141412 1
+-1001-1101
+21414121 2
+001-1101-1
+14141212 1
+1 2 1 2 1 4 1 4
+./test
+-41-1101-10
+41412121 0 +
+1-1101-10-4
+14121214 -4 +
+-1101-10-41
+41212141 -3
+101-10-41-1
+12121414 -4 +
+01-10-41-11
+21214141 -3
+1-10-41-110
+12141412 -3
+-10-41-1101
+21414121 -2
+0-41-1101-1
+14141212 -3
+1 2 1 2 1 4 1 4
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ./test
+2 3 1 4 0 1 0 1 
+-20 20 -30 30 -20 00 -20 00 
+41412121 0 +
+20 -30 30 -20 00 -20 00 -20 
+14121214 0 +
+-30 30 -20 00 -20 00 -20 20 
+41212141 0
+30 -20 00 -20 00 -20 20 -30 
+12121414 0 +
+-20 00 -20 00 -20 20 -30 30 
+21214141 0
+00 -20 00 -20 20 -30 30 -20 
+12141412 0
+-20 00 -20 20 -30 30 -20 00 
+21414121 0
+00 -20 20 -30 30 -20 00 -20 
+14141212 0
+1 2 1 2 1 4 1 4
+4 2 3 2 2 2 1 1 
+00 10 -10 10 00 10 -10 00 
+41412121 0 +
+10 -10 10 00 10 -10 00 00 
+14121214 0 +
+-10 10 00 10 -10 00 00 10 
+41212141 0
+10 00 10 -10 00 00 10 -10 
+12121414 0 +
+00 10 -10 00 00 10 -10 10 
+21214141 0
+10 -10 00 00 10 -10 10 00 
+12141412 0
+-10 00 00 10 -10 10 00 10 
+21414121 0
+00 00 10 -10 10 00 10 -10 
+14141212 0
+1 2 1 2 1 4 1 4
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$./test
+2 3 1 4 0 1 0 1 
+-22-33-20-20
+41412121 0 +
+2-33-20-20-2
+14121214 0 +
+-33-20-20-22
+41212141 0
+3-20-20-22-3
+12121414 0 +
+-20-20-22-33
+21214141 0
+0-20-22-33-2
+12141412 0
+-20-22-33-20
+21414121 0
+0-22-33-20-2
+14141212 0
+1 2 1 2 1 4 1 4
+4 2 3 2 2 2 1 1 
+01-1101-10
+41412121 0 +
+1-1101-100
+14121214 0 +
+-1101-1001
+41212141 0
+101-1001-1
+12121414 0 +
+01-1001-11
+21214141 0
+1-1001-110
+12141412 0
+-1001-1101
+21414121 0
+001-1101-1
+14141212 0
+1 2 1 2 1 4 1 4
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ls
+AOJ-0001.cpp  AOJ-0009.cpp  AOJ-0016.cpp  AOJ-0023.cpp  AOJ-0030.cpp  AOJ-0037.cpp    AOJ-0043.cpp  AOJ-0050.cpp  AOJ-0058.cpp    AOJ-0063.cpp     AOJ-0068.cpp    AOJ-0072.cpp~  AOJ-0079.cpp   AOJ-0082.cpp~
+AOJ-0002.cpp  AOJ-0010.cpp  AOJ-0017.cpp  AOJ-0024.cpp  AOJ-0031.cpp  AOJ-0038.cpp    AOJ-0044.cpp  AOJ-0052.cpp  AOJ-0059-2.cpp  AOJ-0064.cpp     AOJ-0069-2.cpp  AOJ-0073.cpp   AOJ-0079.cpp~  AOJ-0091.cpp
+AOJ-0003.cpp  AOJ-0011.cpp  AOJ-0018.cpp  AOJ-0025.cpp  AOJ-0032.cpp  AOJ-0039.cpp    AOJ-0045.cpp  AOJ-0053.cpp  AOJ-0059-3.cpp  AOJ-0065.cpp     AOJ-0069-3.cpp  AOJ-0074.cpp   AOJ-0080.cpp   AOJ-0097.cpp
+AOJ-0005.cpp  AOJ-0012.cpp  AOJ-0019.cpp  AOJ-0026.cpp  AOJ-0033.cpp  AOJ-0040.cpp    AOJ-0046.cpp  AOJ-0054.cpp  AOJ-0059.cpp    AOJ-0066.cpp     AOJ-0069.cpp    AOJ-0075.cpp   AOJ-0080.cpp~  AOJ-0099.cpp
+AOJ-0006.cpp  AOJ-0013.cpp  AOJ-0020.cpp  AOJ-0027.cpp  AOJ-0034.cpp  AOJ-0041.cpp    AOJ-0047.cpp  AOJ-0055.cpp  AOJ-0060.cpp    AOJ-0067.cpp     AOJ-0070.cpp    AOJ-0077.cpp   AOJ-0081.cpp   test
+AOJ-0007.cpp  AOJ-0014.cpp  AOJ-0021.cpp  AOJ-0028.cpp  AOJ-0035.cpp  AOJ-0042.cpp    AOJ-0048.cpp  AOJ-0056.cpp  AOJ-0061.cpp    AOJ-0068-2.cpp   AOJ-0071.cpp    AOJ-0078.cpp   AOJ-0081.cpp~
+AOJ-0008.cpp  AOJ-0015.cpp  AOJ-0022.cpp  AOJ-0029.cpp  AOJ-0036.cpp  AOJ-0043-2.cpp  AOJ-0049.cpp  AOJ-0057.cpp  AOJ-0062.cpp    AOJ-00688-2.cpp  AOJ-0072.cpp    AOJ-0078.cpp~  AOJ-0082.cpp
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ./test
+2 3 1 4 0 1 0 1 
+-2
+Y
+2
+Y
+-3
+Y
+3
+Y
+-2
+Y
+0
+N
+-2
+Y
+0
+N
+
+41412121 -4 +
+2
+Y
+-3
+Y
+3
+Y
+-2
+Y
+0
+N
+-2
+Y
+0
+N
+-2
+Y
+
+14121214 -4 +
+-3
+Y
+3
+Y
+-2
+Y
+0
+N
+-2
+Y
+0
+N
+-2
+Y
+2
+Y
+
+41212141 -4
+3
+Y
+-2
+Y
+0
+N
+-2
+Y
+0
+N
+-2
+Y
+2
+Y
+-3
+Y
+
+12121414 -4 +
+-2
+Y
+0
+N
+-2
+Y
+0
+N
+-2
+Y
+2
+Y
+-3
+Y
+3
+Y
+
+21214141 -4
+0
+N
+-2
+Y
+0
+N
+-2
+Y
+2
+Y
+-3
+Y
+3
+Y
+-2
+Y
+
+12141412 -4
+-2
+Y
+0
+N
+-2
+Y
+2
+Y
+-3
+Y
+3
+Y
+-2
+Y
+0
+N
+
+21414121 -4
+0
+N
+-2
+Y
+2
+Y
+-3
+Y
+3
+Y
+-2
+Y
+0
+N
+-2
+Y
+
+14141212 -4
+1 2 1 2 1 4 1 4
+4 2 3 2 2 2 1 1 
+0
+N
+1
+Y
+-1
+Y
+1
+Y
+0
+N
+1
+Y
+-1
+Y
+0
+N
+
+41412121 1 +
+1
+Y
+-1
+Y
+1
+Y
+0
+N
+1
+Y
+-1
+Y
+0
+N
+0
+N
+
+14121214 1 +
+-1
+Y
+1
+Y
+0
+N
+1
+Y
+-1
+Y
+0
+N
+0
+N
+1
+Y
+
+41212141 1
+1
+Y
+0
+N
+1
+Y
+-1
+Y
+0
+N
+0
+N
+1
+Y
+-1
+Y
+
+12121414 1 +
+0
+N
+1
+Y
+-1
+Y
+0
+N
+0
+N
+1
+Y
+-1
+Y
+1
+Y
+
+21214141 1
+1
+Y
+-1
+Y
+0
+N
+0
+N
+1
+Y
+-1
+Y
+1
+Y
+0
+N
+
+12141412 1
+-1
+Y
+0
+N
+0
+N
+1
+Y
+-1
+Y
+1
+Y
+0
+N
+1
+Y
+
+21414121 1
+0
+N
+0
+N
+1
+Y
+-1
+Y
+1
+Y
+0
+N
+1
+Y
+-1
+Y
+
+14141212 1
+1 2 1 2 1 4 1 4
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ./test
+2 3 1 4 0 1 0 1 
+1 4 1 4 1 2 1 2
+4 2 3 2 2 2 1 1 
+1 4 1 4 1 2 1 2
+
+1 4 1 4 1 2 1 2
+
+1 4 1 4 1 2 1 2
+
+1 4 1 4 1 2 1 2
+
+1 4 1 4 1 2 1 2
+
+1 4 1 4 1 2 1 2
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ./test
+2 3 1 4 0 1 0 1 
+1 2 1 2 1 4 1 4
+4 2 3 2 2 2 1 1 
+1 2 1 2 1 4 1 4
+  C-c C-c
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ./test
+2 3 1 4 0 1 0 1 
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+1 2 1 2 1 4 1 4
+4 2 3 2 2 2 1 1 
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+Y
+1 2 1 2 1 4 1 4
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ./test
+2 3 1 4 0 1 0 1 
+1 2 1 2 1 4 1 4
+4 2 3 2 2 2 1 1 
+1 2 1 2 1 4 1 4
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ./test
+2 3 1 4 0 1 0 1 
+-4
+-4
+-4
+-4
+-4
+-4
+-4
+-4
+1 2 1 2 1 4 1 4
+4 2 3 2 2 2 1 1 
+1
+1
+1
+1
+1
+1
+1
+1
+1 2 1 2 1 4 1 4
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ./test
+2 3 1 4 0 1 0 1 
+5
+5
+5
+5
+5
+5
+5
+5
+1 2 1 2 1 4 1 4
+4 2 3 2 2 2 1 1 
+3
+3
+3
+3
+3
+3
+3
+3
+1 2 1 2 1 4 1 4
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ./test
+2 3 1 4 0 1 0 1 
+0
+1
+1
+3
+3
+3
+3
+3
+1 2 1 2 1 4 1 4
+4 2 3 2 2 2 1 1 
+0
+1
+1
+3
+3
+3
+3
+3
+1 2 1 2 1 4 1 4
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ./test
+2 3 1 4 0 1 0 1 
+5
+5
+5
+5
+5
+5
+5
+5
+1 2 1 2 1 4 1 4
+4 2 3 2 2 2 1 1 
+3
+3
+3
+3
+3
+3
+3
+2 3 1 4 0 1 0 1 3
+1 2 1 2 1 4 1 4
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ./test
+2 3 1 4 0 1 0 1 3
+5 41412121
+5 14121214
+5 41212141
+5 12121414
+5 21214141
+5 12141412
+5 21414121
+5 14141212
+1 2 1 2 1 4 1 4
+4 2 3 2 2 2 1 1 
+3 41412121
+3 14121214
+3 41212141
+3 12121414
+3 21214141
+3 12141412
+3 21414121
+3 14141212
+1 2 1 2 1 4 1 4
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume./test
+2 3 1 4 0 1 0 1 
+100000004 41412121
+100000004 14121214
+100000004 41212141
+100000004 12121414
+100000004 21214141
+100000004 12141412
+100000004 21414121
+100000004 14141212
+2 1 4 1 4 1 2 1
+4 2 3 2 2 2 1 1 
+100000002 41412121
+100000002 14121214
+100000002 41212141
+100000002 12121414
+100000002 21214141
+100000002 12141412
+100000002 21414121
+100000002 14141212
+2 1 4 1 4 1 2 1
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ./test
+2 3 1 4 0 1 0 1 
+4 4 4 4 4 990059265 990059265 7
+4 2 3 2 2 2 1 1 
+4 4 4 4 4 990059265 990059265 7
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ./test
+2 3 1 4 0 1 0 1 
+1 2 1 2 1 4 1 7
+4 2 3 2 2 2 1 1 
+1 2 1 2 1 4 1 7
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ./test
+2 3 1 4 0 1 0 1 
+1 2 1 2 1 4 1 7
+4 2 3 2 2 2 1 1 
+1 2 1 2 1 4 1 7
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ./test
+2 3 1 4 0 1 0 1 
+41412121
+14121214
+41212141
+12121414
+21214141
+12141412
+21414121
+14141212
+1 2 1 2 1 4 1 7
+4 2 3 2 2 2 1 1 
+41412121
+14121214
+41212141
+12121414
+21214141
+12141412
+21414121
+14141212
+1 2 1 2 1 4 1 7
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ./test
+2 3 1 4 0 1 0 1 
+41412121 -4
+14121214 -4
+41212141 -4
+12121414 -4
+21214141 -4
+12141412 -4
+21414121 -4
+14141212 -4
+1 2 1 2 1 4 1 7
+4 2 3 2 2 2 1 1 
+41412121 1
+14121214 1
+41212141 1
+12121414 1
+21214141 1
+12141412 1
+21414121 1
+14141212 1
+1 2 1 2 1 4 1 7
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ whois
+Usage: whois [OPTION]... OBJECT...
+
+-h HOST, --host HOST   connect to server HOST
+-p PORT, --port PORT   connect to PORT
+-H                     hide legal disclaimers
+      --verbose        explain what is being done
+      --help           display this help and exit
+      --version        output version information and exit
+
+These flags are supported by whois.ripe.net and some RIPE-like servers:
+-l                     find the one level less specific match
+-L                     find all levels less specific matches
+-m                     find all one level more specific matches
+-M                     find all levels of more specific matches
+-c                     find the smallest match containing a mnt-irt attribute
+-x                     exact match
+-b                     return brief IP address ranges with abuse contact
+-B                     turn off object filtering (show email addresses)
+-G                     turn off grouping of associated objects
+-d                     return DNS reverse delegation objects too
+-i ATTR[,ATTR]...      do an inverse look-up for specified ATTRibutes
+-T TYPE[,TYPE]...      only look for objects of TYPE
+-K                     only primary keys are returned
+-r                     turn off recursive look-ups for contact information
+-R                     force to show local copy of the domain object even
+                       if it contains referral
+-a                     also search all the mirrored databases
+-s SOURCE[,SOURCE]...  search the database mirrored from SOURCE
+-g SOURCE:FIRST-LAST   find updates from SOURCE from serial FIRST to LAST
+-t TYPE                request template for object of TYPE
+-v TYPE                request verbose template for object of TYPE
+-q [version|sources|types]  query specified server info
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ whois pushl.net
+
+Whois Server Version 2.0
+
+Domain names in the .com and .net domains can now be registered
+with many different competing registrars. Go to http://www.internic.net
+for detailed information.
+
+   Domain Name: PUSHL.NET
+   Registrar: MELBOURNE IT, LTD. D/B/A INTERNET NAMES WORLDWIDE
+   Whois Server: whois.melbourneit.com
+   Referral URL: http://www.melbourneit.com
+   Name Server: NS1.DNS.NE.JP
+   Name Server: NS2.DNS.NE.JP
+   Status: ok
+   Updated Date: 23-mar-2014
+   Creation Date: 19-jan-2012
+   Expiration Date: 19-jan-2015
+
+>>> Last update of whois database: Thu, 23 Oct 2014 09:53:30 GMT <<<
+
+NOTICE: The expiration date displayed in this record is the date the 
+registrar's sponsorship of the domain name registration in the registry is 
+currently set to expire. This date does not necessarily reflect the expiration 
+date of the domain name registrant's agreement with the sponsoring 
+registrar.  Users may consult the sponsoring registrar's Whois database to 
+view the registrar's reported date of expiration for this registration.
+
+TERMS OF USE: You are not authorized to access or query our Whois 
+database through the use of electronic processes that are high-volume and 
+automated except as reasonably necessary to register domain names or 
+modify existing registrations; the Data in VeriSign Global Registry 
+Services' ("VeriSign") Whois database is provided by VeriSign for 
+information purposes only, and to assist persons in obtaining information 
+about or related to a domain name registration record. VeriSign does not 
+guarantee its accuracy. By submitting a Whois query, you agree to abide 
+by the following terms of use: You agree that you may use this Data only 
+for lawful purposes and that under no circumstances will you use this Data 
+to: (1) allow, enable, or otherwise support the transmission of mass 
+unsolicited, commercial advertising or solicitations via e-mail, telephone, 
+or facsimile; or (2) enable high volume, automated, electronic processes 
+that apply to VeriSign (or its computer systems). The compilation, 
+repackaging, dissemination or other use of this Data is expressly 
+prohibited without the prior written consent of VeriSign. You agree not to 
+use electronic processes that are automated and high-volume to access or 
+query the Whois database except as reasonably necessary to register 
+domain names or modify existing registrations. VeriSign reserves the right 
+to restrict your access to the Whois database in its sole discretion to ensure 
+operational stability.  VeriSign may restrict or terminate your access to the 
+Whois database for failure to abide by these terms of use. VeriSign 
+reserves the right to modify these terms at any time. 
+
+The Registry database contains ONLY .COM, .NET, .EDU domains and
+Registrars.
+Domain Name: pushl.net
+Registry Domain ID: 1697728692_DOMAIN_NET-VRSN
+Registrar WHOIS Server: whois.melbourneit.com
+Registrar URL: http://www.melbourneit.com.au
+Updated Date: 2014-03-23T03:53:00Z
+Creation Date: 2012-01-19T11:58:38Z
+Registrar Registration Expiration Date: 2015-01-19T22:58:38Z
+Registrar: Melbourne IT Ltd
+Registrar IANA ID: 13
+Registrar Abuse Contact Email: abuse@melbourneit.com.au
+Registrar Abuse Contact Phone: +61.386242300
+Domain Status: ok
+Registry Registrant ID: 
+Registrant Name: Tomoki Imai
+Registrant Organization: Sakura Internet
+Registrant Street: 1-8-14 Minami Honmachi
+Registrant City: Chuo-ku
+Registrant State/Province: Osaka
+Registrant Postal Code: 541-0054
+Registrant Country: JP
+Registrant Phone: +816.62654830
+Registrant Phone Ext: 
+Registrant Fax: 
+Registrant Fax Ext: 
+Registrant Email: nic-staff@sakura.ad.jp
+Registry Admin ID: 
+Admin Name: Internet SAKURA
+Admin Organization: NA
+Admin Street: 1-8-14 Minami Honmachi
+Admin City: Chuo-ku
+Admin State/Province: Osaka
+Admin Postal Code: 541-0054
+Admin Country: JP
+Admin Phone: +816.62654830
+Admin Phone Ext: 
+Admin Fax: 
+Admin Fax Ext: 
+Admin Email: tomo832@gmail.com
+Registry Tech ID: 
+Tech Name: SAKURA Internet
+Tech Organization: NA
+Tech Street: 1-8-14 Minami-Honmachi Chuou-ku
+Tech City: Osaka
+Tech State/Province: OSAKA
+Tech Postal Code: 541-0054
+Tech Country: JP
+Tech Phone: +81.0120775664
+Tech Phone Ext: 
+Tech Fax: +813.62654834
+Tech Fax Ext: 
+Tech Email: nic-staff@sakura.ad.jp
+Name Server: NS1.DNS.NE.JP
+Name Server: NS2.DNS.NE.JP
+DNSSEC: unsigned
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdrprs.internic.net
+>>> Last update of WHOIS database: 2014-10-23T09:49:44Z
+
+TERMS OF USE OF MELBOURNE IT WHOIS DATABASE
+The WHOIS database is operated by Melbourne IT Ltd ('we', 'our' or 'us'). Your access to, and use of, our WHOIS database and the information made available on our WHOIS database is subject to these Terms of Use and our Privacy Policy. All information contained in our WHOIS database is provided 'as is'. We take no responsibility for any error or omission in our WHOIS database. The data in our WHOIS database is provided to you for your information only. You may use the information in our WHOIS database only for the purpose of obtaining information about or related to a domain name registration record ('Permitted Purpose'). You agree not to use high-volume, automated electronic processes to access or query our WHOIS database. By submitting a WHOIS query to us, you agree that you will only use the data obtained from a WHOIS query for the Permitted Purpose and for lawful purposes, and that you will not: (a) allow, enable, or otherwise support the transmission of mass, unsolicited, commercial advertising or solicitations by e-mail, telephone, or facsimile; or (b) enable high volume, automated, electronic processes that send queries or data to the systems of any Registry Operator or ICANN-Accredited registrar, except as reasonably necessary to register domain names or modify existing domain name registrations. You also agree that the copying, reproduction, translation, compilation, re-packaging, dissemination or other use of the data in our WHOIS database is prohibited without our prior written consent. We reserve the right to terminate your access to our WHOIS database at any time, and for any reason, including (without limitation) if you fail to comply with any provision of these Terms of Use, or we consider that you are excessively querying our WHOIS database. These Terms of Use may be modified by us at any time without notice by our amending the Terms of Use on this web page. You agree that your use of our WHOIS database following any modification to these Terms of Us
+e will constitute your acceptance of these Terms of Use (as modified from time to time).
+
+
+
+
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ dig pushl.net
+
+; <<>> DiG 9.9.5-3-Ubuntu <<>> pushl.net
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 46583
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 2, ADDITIONAL: 3
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;pushl.net.			IN	A
+
+;; ANSWER SECTION:
+pushl.net.		3600	IN	A	219.94.255.200
+
+;; AUTHORITY SECTION:
+pushl.net.		3600	IN	NS	ns1.dns.ne.jp.
+pushl.net.		3600	IN	NS	ns2.dns.ne.jp.
+
+;; ADDITIONAL SECTION:
+ns2.dns.ne.jp.		556	IN	A	210.224.172.13
+ns1.dns.ne.jp.		702	IN	A	210.188.224.9
+
+;; Query time: 280 msec
+;; SERVER: 127.0.1.1#53(127.0.1.1)
+;; WHEN: Thu Oct 23 18:54:24 JST 2014
+;; MSG SIZE  rcvd: 131
+
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ 
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ 
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ 
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ ls
+AOJ-0001.cpp  AOJ-0009.cpp  AOJ-0016.cpp  AOJ-0023.cpp  AOJ-0030.cpp  AOJ-0037.cpp    AOJ-0043.cpp  AOJ-0050.cpp  AOJ-0058.cpp    AOJ-0063.cpp     AOJ-0068.cpp    AOJ-0072.cpp~  AOJ-0079.cpp    AOJ-0082-2.cpp~
+AOJ-0002.cpp  AOJ-0010.cpp  AOJ-0017.cpp  AOJ-0024.cpp  AOJ-0031.cpp  AOJ-0038.cpp    AOJ-0044.cpp  AOJ-0052.cpp  AOJ-0059-2.cpp  AOJ-0064.cpp     AOJ-0069-2.cpp  AOJ-0073.cpp   AOJ-0079.cpp~   AOJ-0082.cpp
+AOJ-0003.cpp  AOJ-0011.cpp  AOJ-0018.cpp  AOJ-0025.cpp  AOJ-0032.cpp  AOJ-0039.cpp    AOJ-0045.cpp  AOJ-0053.cpp  AOJ-0059-3.cpp  AOJ-0065.cpp     AOJ-0069-3.cpp  AOJ-0074.cpp   AOJ-0080.cpp    AOJ-0082.cpp~
+AOJ-0005.cpp  AOJ-0012.cpp  AOJ-0019.cpp  AOJ-0026.cpp  AOJ-0033.cpp  AOJ-0040.cpp    AOJ-0046.cpp  AOJ-0054.cpp  AOJ-0059.cpp    AOJ-0066.cpp     AOJ-0069.cpp    AOJ-0075.cpp   AOJ-0080.cpp~   AOJ-0091.cpp
+AOJ-0006.cpp  AOJ-0013.cpp  AOJ-0020.cpp  AOJ-0027.cpp  AOJ-0034.cpp  AOJ-0041.cpp    AOJ-0047.cpp  AOJ-0055.cpp  AOJ-0060.cpp    AOJ-0067.cpp     AOJ-0070.cpp    AOJ-0077.cpp   AOJ-0081.cpp    AOJ-0097.cpp
+AOJ-0007.cpp  AOJ-0014.cpp  AOJ-0021.cpp  AOJ-0028.cpp  AOJ-0035.cpp  AOJ-0042.cpp    AOJ-0048.cpp  AOJ-0056.cpp  AOJ-0061.cpp    AOJ-0068-2.cpp   AOJ-0071.cpp    AOJ-0078.cpp   AOJ-0081.cpp~   AOJ-0099.cpp
+AOJ-0008.cpp  AOJ-0015.cpp  AOJ-0022.cpp  AOJ-0029.cpp  AOJ-0036.cpp  AOJ-0043-2.cpp  AOJ-0049.cpp  AOJ-0057.cpp  AOJ-0062.cpp    AOJ-00688-2.cpp  AOJ-0072.cpp    AOJ-0078.cpp~  AOJ-0082-2.cpp  test
+wanimaru@wanimaru-System-Product-Name:~/Dropbox/Program/aoj/volume0/cpp$ 

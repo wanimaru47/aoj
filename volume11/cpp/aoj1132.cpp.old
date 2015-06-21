@@ -1,0 +1,58 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+typedef pair<double,double> P;
+
+vector<P> v;
+int res, n;
+
+bool cmp_x (const P& firstEof, const P& secondEof) {
+    if (firstEof.first == secondEof.first) return firstEof.second < secondEof.second;
+    return firstEof.first < secondEof.first;
+}
+
+void dfs (vector<P> &t, int k) {
+    if (k >= n || v[k].first - t[0].first > 2.) {
+            res = max(res, (int)t.size());
+            return ;
+    }
+    
+    bool flag = true;
+    for (int j = 0; j < t.size(); j++) {
+        int dis = pow(v[k].first - t[j].first, 2.) + pow(v[k].second - t[j].second, 2.);
+        if (dis > 2.) {
+            flag = false;
+            break;
+        }
+    }
+    dfs(t, k + 1);
+    if (flag) {
+        t.push_back(v[k]);
+        dfs(t, k + 1);
+    }
+}
+
+int main () {
+    while (cin >> n, n) {
+        v.clear();
+        for (int i = 0; i < n; i++) {
+            double x, y;
+            cin >> x >> y;
+            v.push_back(P(x,y));
+        }
+        
+        sort(v.begin(), v.end(), cmp_x);
+        
+        res = 0;
+        for (int i = 0; i < n; i++) {
+            vector<P> tmp;
+            tmp.push_back(v[i]);
+            int k = i + 1;
+            dfs(tmp, k);
+        }
+        
+        cout << res << endl;
+    }
+    
+    return 0;
+}

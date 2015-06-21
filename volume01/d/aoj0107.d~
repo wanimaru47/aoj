@@ -1,0 +1,13 @@
+import std.stdio;
+import std.string;
+import std.conv;
+import std.algorithm;
+
+int main()
+{
+    int h, w, l;
+    l,w,h = readln.chomp.split;
+    
+
+    return 0;
+}

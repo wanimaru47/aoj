@@ -1,0 +1,14 @@
+#include <iostream>
+#define MAX 12
+using namespace std;
+
+int main()
+{
+    int N;
+    while (cin >> n) {
+        int num[N];
+        
+    }
+
+    return 0;
+}

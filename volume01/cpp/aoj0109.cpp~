@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cstring>
+#include <queue>
+#include <vector>
+using namespace std;
+
+int main()
+{
+    int N ;
+    cin >> N;
+    while (N--) {
+        char str[MAX];
+        cin >> str;
+        string str[MAX];
+        queue<string> p;
+        string[] s;
+        char *tp;
+        tp = strtok(str, "+*/=-");
+        while (flag) {
+            vector<char> v;
+            for (int i = 0; str[i] != '='; i++) {
+                if ('0' <= str[i] && str[i] <= '9') v.push_back(str[i]);
+            }
+        }
+    }
+
+    return 0;
+}

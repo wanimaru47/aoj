@@ -1,0 +1,76 @@
+#include <iostream>
+#include <algorithm>
+#include <string>
+#include <vector>
+#include <map>
+#include <sstream>
+
+using namespace std;
+
+map<string, string> pre;
+pre[" "] = "101";
+pre["'"] = "000000";
+pre[","] = "000011";
+pre["-"] = "10010001";
+pre["."] = "010001";
+pre["?"] = "000001";
+pre["A"] = "100101";
+pre["B"] = "10011010";
+pre["C"] = "0101";
+pre["D"] = "0001";
+pre["E"] = "110";
+pre["F"] = "01001";
+pre["G"] = "10011011";
+pre["H"] = "010000";
+pre["I"] = "0111";
+pre["J"] = "10011000";
+pre["K"] = "0110";
+pre["L"] = "00100";
+pre["M"] = "10011001";
+pre["N"] = "10011110";
+pre["O"] = "00101";
+pre["P"] = "111";
+pre["Q"] = "10011111";
+pre["R"] = "1000";
+pre["S"] = "00110";
+pre["T"] = "00111";
+pre["U"] = "10011100";
+pre["V"] = "10011101";
+pre["W"] = "000010";
+pre["X"] = "10010010";
+pre["Y"] = "10010011";
+pre["Z"] = "10010000";
+
+string aft[] = {" ", ".". ",", "-", "'", "?"};
+
+int main ()
+{
+    string str;
+    while (getline(cin, str)) {
+        string p;
+        for (int i = 0; i < str.size(); i++) {
+            p += pre[str[i]];
+        }
+        while (p.size() % 5 != 0) {
+            p += "0";
+        }
+        int s = 0;
+        int t = 16;
+        for (int i = 0; i < p.size(); i++) {
+            if (i % 5 == 0) {t = 16; s = 0;}
+            s += p[i] == '1' ? i : 0;
+            i /= 2;
+            if (i % 5 == 4) {
+                if (0 <= s && s < 26) {
+                    cout << (char)('A' + s);
+                } else {
+                    s -= 26;
+                    cout << aft[s];
+                }
+            }
+        }
+        cout << endl;
+    }
+
+    return 0;
+}

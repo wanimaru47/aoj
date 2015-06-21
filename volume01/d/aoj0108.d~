@@ -1,0 +1,13 @@
+import std.stdio;
+import std.string;
+import std.conv;
+import std.algorithm;
+
+int main()
+{
+    while () {
+
+    }
+
+    return 0;
+}

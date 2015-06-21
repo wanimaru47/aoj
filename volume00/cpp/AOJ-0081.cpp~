@@ -1,0 +1,30 @@
+#include <iostream>
+#include <vector>
+#include <complex>
+#include <string>
+#include <sstream>
+#define EPS 1e-10
+#define EQ(a,b) (abs(a - b) < EPS)
+#define EQV(a,b) ( EQ((a).real(), (b).real()) && EQ((a).imag(), (b).imag()))
+
+using namespace std;
+
+typedef complex<double> P;
+
+int main ()
+{
+    string str;
+    while (cin >> str) {
+        stringstream ss;
+        for (int i = 0; i < str.size();) 
+            if (str[i] == ',') str[i] = ' '; 
+        ss << str;
+        double x1, y1, x2, y2, xp, yp;
+        ss >> x1 >> y1 >> x2 >> y2 >> xp >> yp;
+        P a = P(x1, y2), b = P(x2, y2), p = P(px, py);
+        P L1 = a - b;
+        p L2 = L1 * P(0,-1);
+    }
+
+    return 0;
+}
