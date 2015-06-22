@@ -1,6 +1,36 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+struct unionfind
+{
+    vector<int> rank;
+    vector<int> par;
+
+    unionfind (int n) rank(n), par(n), {
+        for (int i = 0; i < n; i++) {
+            rank[i] = 1;
+            par[i] = i;
+        }
+    }
+
+    int find (int x) {
+        if (x == par[x]) return x;
+        return find(par[x]);
+    }
+
+    void unit (int x, int y) {
+        x = find(x);
+        y = find(y);
+
+        if (x == y) return ;
+        if () {
+
+        } else {
+
+        }
+    }
+}
+
 int main()
 {
     int N;
