@@ -1,74 +1,46 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct unionfind
-{
-    vector<int> rank;
-    vector<int> par;
-
-    unionfind (int n) rank(n), par(n), {
-        for (int i = 0; i < n; i++) {
-            rank[i] = 1;
-            par[i] = i;
-        }
-    }
-
-    int find (int x) {
-        if (x == par[x]) return x;
-        return find(par[x]);
-    }
-
-    void unit (int x, int y) {
-        x = find(x);
-        y = find(y);
-
-        if (x == y) return ;
-        if () {
-
-        } else {
-
-        }
-    }
-}
-
 int main()
 {
     int N;
     while (cin >> N, N) {
         vector<vector<bool> > v(N, vector<bool>(33, false));
-        vector<vector<set<int> > > dp(N, vector<set<int> >(33));
+        vector<vector<long long> > dp(N, vector<long long>(33, 0));
         for (int i = 0; i < N; i++) {
             int m;
             cin >> m;
+            dp[i][1] = 1LL << i;
             for (int j = 0; j < m; j++) {
                 int tmp;
                 cin >> tmp;
                 v[i][tmp] = true;
-                if (j == 0) dp[i][tmp].insert(i);
             }
         }
 
-        bool flag = true;
         int res = 0;
-        for (int i = 1; flag && i <= 31; i++) {
-            set<int> count;
-            for (int j = 0; j < N; j++) {
-                if (v[j][i]) count.insert(dp[j][i].begin(), dp[j][i].end());
-                if (dp[j][i].size() == N) res = i - 1, flag = false;
-            }
-            for (int j = 0; flag && j < N; j++)
-                if (v[j][i]) dp[j][i + 1].insert(count.begin(), count.end());
-                else dp[j][i + 1].insert(dp[j][i].begin(), dp[j][i].end());
-        }
 
-        /*
-        for (int i = 0; i < N; i++) {
-            for (int j = 1; j <= 30; j++) {
-                cout << dp[i][j].size() << " ";
+        for (int k = 1; k <= 31; k++) {
+            long long tmp = 0;
+            for (int i = 0; i < N; i++) {
+                if (v[i][k]) {
+                    tmp |= dp[i][k];
+                }
             }
-            cout << endl;
+
+            if ((1LL << N) - 1LL == tmp) {
+                res = k;
+                break;
+            }
+
+            for (int i = 0; i < N; i++) {
+                if (v[i][k]) {
+                    dp[i][k+1] |= tmp;
+                } else {
+                    dp[i][k+1] |= dp[i][k];
+                }
+            }
         }
-        */
 
         cout << (res == 0 ? -1 : res) << endl;
     }
