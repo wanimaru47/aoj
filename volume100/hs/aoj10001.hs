@@ -1,3 +1,3 @@
 main = do
-  n <- readLn
-  putStrLn . show $ n * n * n
+    n <- readLn
+    putStrLn . show $ n * n * n
