@@ -12,7 +12,7 @@ int main () {
         for (int i = 0; i < B; i++) cin >> back[i];
 
         vector<V> dp(T+3, V(N+1));
-        dp[0][0] = 1.L;
+        dp[0][0] = 1;
         
         for (int i = 0; i < T; i++) {
             dp[i+1][N] += dp[i][N];
