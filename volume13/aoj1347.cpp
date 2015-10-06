@@ -10,9 +10,23 @@ int main () {
         cin >> c[i] >> d[i];
     }
 
-    while (que.size()) {
-
+    vec h(N + 1);
+    for (int i = 0; i < m; i++) {
+        if (c[i] < d[i]) { 
+            for (int j = c[i] + 1; j <= d[i]; j++) {
+                h[j] = 1;
+            }
+        }
     }
+
+    int res = N + 1;
+    for (int i = 1; i <= N; i++) {
+        if (h[i]) {
+            res += 2;
+        }
+    }
+
+    cout << res << endl;
     
     return 0;
 }
