@@ -4,8 +4,7 @@ using namespace std;
 typedef pair<int,int> P;
 
 const int dx[] = {1, 0, -1, 0};
-const int dy1[] = {0, 1, 0, -1};
-const int dy2[] = {0, -1, 0, 1};
+const int dy[] = {0, 1, 0, -1};
 bool d[55][55][55][55];
 
 int main() {
@@ -30,27 +29,32 @@ int main() {
 
         bool res = false;
         while (1) {
+            // cout << que1.size() << " " << que2.size() << endl;
             if (!que1.size() || !que2.size()) break;
             P p1 = que1.front(); que1.pop();
             P p2 = que2.front(); que2.pop();
-            if (G1[p1.first][p1.second] == '%' && G2[p2.first][p2.second] == '%') {
-                res = true;
-                break;
-            }
 
             int x1 = p1.first;
+            int y1 = p1.second;
             int x2 = p2.first;
             int y2 = p2.second;
-            int y1 = p1.second;
             for (int i = 0; i < 4; i++) {
                 int nx1 = x1 + dx[i];
-                int ny1 = y1 + dy1[i];
+                int ny1 = y1 + dy[i];
                 int nx2 = x2 + dx[i];
-                int ny2 = y2 + dy2[i];
+                int ny2 = y2 - dy[i];
 
+                // cout << endl;
+                // cout << "# " << nx1 << " " << ny1 << " " << nx2 << " " << ny2 << endl;
                 if ( nx1 < 0 || nx1 >= m || ny1 < 0 || ny1 >= n || G1[nx1][ny1] == '#') nx1 = x1, ny1 = y1;
                 if ( nx2 < 0 || nx2 >= m || ny2 < 0 || ny2 >= n || G2[nx2][ny2] == '#') nx2 = x2, ny2 = y2;
+                // cout << "% " << nx1 << " " << ny1 << " " << nx2 << " " << ny2 << endl;
 
+                if (G1[nx1][ny1] == '%' && G2[nx2][ny2] == '%') {
+                    res = true;
+                    break;
+                }
+                if (G1[nx1][ny1] == '%' || G2[nx2][ny2] == '%') continue;
                 if (d[nx1][ny1][nx2][ny2]) {
                     d[nx1][ny1][nx2][ny2] = false;
                     que1.push(P(nx1, ny1));
