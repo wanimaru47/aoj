@@ -23,28 +23,16 @@ int main() {
     dx['L'] = 0, dy['L'] = -1;
     dx['R'] = 0, dy['R'] = 1;
     int res = 1 << 28;
+    
+    vector<vector<int>> d(H + 1, vector<int>(W + 1, 0));
+
     for(int i = 0; i < N; i++) {
         int sx, sy;
-        cin >> sx >> sy;
+        cin >> sy >> sx;
         int times; cin >> times;
         string code; cin >> code;
-        int steps = 0;
-        for(int j = 0; j < times; j++) {
-            int tmp = 0;
-            bool flag = false;
-            for(int k = 0; k < code.size(); k++) {
-                int nx = sx + dx[code[k]];
-                int ny = sy + dy[code[k]];
-                if(0 <= nx && nx <= W && 0 <= ny && ny <= H) {
-                    sx = nx;
-                    sy = ny;
-                    if(!flag) tmp++;
-                    if(dist(nx, ny)) flag = true;
-                }
-            }
-            steps += tmp;
+        for (int j = 0; j < code.size(); j++) {
         }
-        res = min(res, steps);
     }
     cout << res << endl;
 
