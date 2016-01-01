@@ -2,8 +2,9 @@
 using namespace std;
 
 typedef pair<int,int> P;
-typedef pair<P,P> PP;
-typedef priority_queue<PP, vector<PP>, greater<PP>> PQ;
+typedef pair<int,P> PP;
+typedef pair<PP,P> PPP;
+typedef priority_queue<PPP, vector<PPP>, greater<PPP>> PQ;
 
 string str = "^>v<";
 const int dx[] = {-1, 0, 1, 0};
@@ -11,19 +12,6 @@ const int dy[] = {0, 1, 0, -1};
 
 const int dx_[] = {-1, -1, 0, 1, 1, 1, 0, -1};
 const int dy_[] = {0, 1, 1, 1, 0, -1, -1, -1};
-
-bool check(vector<string> &v, int x, int y, int dir) {
-    for (int i = 0; i < 4; i++) {
-        int nx, ny;
-        nx = x + dx_[(2 * dir + i) % 8];
-        ny = y + dy_[(2 * dir + i) % 8];
-        if (0 <= nx && nx < v.size() && 0 <= ny && ny < v[nx].size()) {
-            if (v[nx][ny] == '#') return true;
-        } else return true;
-    }
-
-    return false;
-}
 
 int main () {
     int N, M, sx, sy, sdir;
@@ -41,45 +29,72 @@ int main () {
         }
     }
 
-    int d[N][M][4];
+    PQ que;
+    int d[N][M][4][4];
     for (int i = 0; i < N; i++) 
         for (int j = 0; j < M; j++)
-            for (int k = 0; k < 4; k++) d[i][j][k] = 1 << 28;
-    d[sx][sy][sdir] = 0;
+            for (int k = 0; k < 4; k++) 
+                for (int l = 0; l < 4; l++) d[i][j][k][l] = 1 << 28;
 
-    PQ que;
-    que.push(PP(P(0, sdir), P(sx, sy)));
+    for (int i = 0; i < 4; i++) {
+        int nx, ny;
+        nx = sx + dx_[(2 * sdir + i) % 8];
+        ny = sy + dy_[(2 * sdir + i) % 8];
+        if (0 <= nx && nx < v.size() && 0 <= ny && ny < v[nx].size()) {
+            if (v[nx][ny] == '#') {
+                que.push(PPP(PP(0, P(i, sdir)), P(sx, sy)));
+                d[sx][sy][sdir][i] = 0;
+            }
+        } else {
+            que.push(PPP(PP(0, P(i, sdir)), P(sx, sy)));
+            d[sx][sy][sdir][i] = 0;
+        }
+    }
     
     int res = 1 << 28;
     while (que.size()) {
-        PP pp = que.top(); que.pop();
+        PPP pp = que.top(); que.pop();
         int x = pp.second.first;
         int y = pp.second.second;
-        int dir = pp.first.second;
+        int dir = pp.first.second.second;
+        int c = pp.first.second.first;
         int cost = pp.first.first;
 
-        if (d[x][y][dir] < cost) continue;
+        if (d[x][y][dir][c] < cost) continue;
         if (v[x][y] == 'G') res = min(res, cost);
 
         int nx = x + dx[dir];
         int ny = y + dy[dir];
 
-        if (0 <= nx && nx < N && 0 <= ny && ny < M && v[nx][ny] != '#' && d[nx][ny][dir] > cost + 1) {
-            if (check(v, nx, ny, dir)) {
-                d[nx][ny][dir] = cost + 1;
-                que.push(PP(P(cost + 1, dir), P(nx, ny)));
+        if (0 <= nx && nx < N && 0 <= ny && ny < M && v[nx][ny] != '#') {
+            if ((c == 1 || c == 2) && d[nx][ny][dir][c + 1] > cost + 1) {
+                d[nx][ny][dir][c + 1] = cost + 1;
+                que.push(PPP(PP(cost + 1, P(c + 1, dir)), P(nx, ny)));
             }
         }
-        if (d[x][y][(dir + 1) % 4] > cost + 1) {
-            if (check(v, x, y, (dir + 1) % 4)) {
-                d[x][y][(dir + 1) % 4] = cost + 1;
-                que.push(PP(P(cost + 1, (dir + 1) % 4), P(x, y)));
-            }
+        if ((c == 2 || c == 3) && d[x][y][(dir + 1) % 4][c - 2] > cost + 1) {
+            d[x][y][(dir + 1) % 4][c - 2] = cost + 1;
+            que.push(PPP(PP(cost + 1, P(c - 2, (dir + 1) % 4)), P(x, y)));
         }
-        if (d[x][y][(dir + 3) % 4] > cost + 1) {
-            if (check(v, x, y, (dir + 3) % 4)) {
-                d[x][y][(dir + 3) % 4] = cost + 1;
-                que.push(PP(P(cost + 1, (dir + 3) % 4), P(x, y)));
+        if ((c == 0 || c == 1) && d[x][y][(dir + 3) % 4][c + 2] > cost + 1) {
+            d[x][y][(dir + 3) % 4][c + 2] = cost + 1;
+            que.push(PPP(PP(cost + 1, P(c + 2, (dir + 3) % 4)), P(x, y)));
+        }
+
+        for (int i = 0; i < 4; i++) {
+            if (c == i) continue;
+            int nx = x + dx_[(2 * dir + i) % 8];
+            int ny = y + dy_[(2 * dir + i) % 8];
+            if (0 <= nx && nx < N && 0 <= ny && ny < M) {
+                if (v[nx][ny] == '#' && d[x][y][dir][i] > cost + 1) {
+                    d[x][y][dir][i] = cost + 1;
+                    que.push(PPP(PP(cost + 1, P(i, dir)), P(x, y)));
+                }
+            } else {
+                if (d[x][y][dir][i] > cost + 1) {
+                    d[x][y][dir][i] = cost + 1;
+                    que.push(PPP(PP(cost + 1, P(i, dir)), P(x, y)));
+                }
             }
         }
     }
