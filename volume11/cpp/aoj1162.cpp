@@ -16,6 +16,8 @@ int main() {
         vec dist(N + 1);
         vec prevv(N + 1);
         vec preve(N + 1);
+        S--;
+        T--;
 
         vec xvec(M), yvec(M), dvec(M), cvec(M);
         for (int i = 0; i < M; i++) {
@@ -49,6 +51,13 @@ int main() {
                 }
             }
         }
+
+        cout << "###########################################" << endl;
+        for (auto i : c_cost) {
+            for (auto j : i) cout << j << " ";
+            cout << endl;
+        }
+        cout << "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$" << endl;
 
         auto add_edge = [&](int from, int to, int cap, int cost) {
             G[from].push_back((edge){to, cap, cost, (int)(G[to].size())});
