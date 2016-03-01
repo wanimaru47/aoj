@@ -40,11 +40,11 @@ int main() {
             for (auto &j : q[i]) cin >> j;
             for (auto &j : r[i]) cin >> j;
 
-            c_cost[i][0] = r[i][0];
+            c_cost[i][0] = 0;
 
             int l = 0;
             for (int j = 0; j < 222; j++) {
-                if (l == q[i].size()) c_cost[i][j + 1] = c_cost[i][j];
+                if (l == q[i].size()) c_cost[i][j + 1] = c_cost[i][j] + r[i][l];
                 else {
                     if (q[i][l] > j) c_cost[i][j+1] = c_cost[i][j] + r[i][l];
                     if (q[i][l] == j + 1) l++;
@@ -61,7 +61,7 @@ int main() {
 
         auto add_edge = [&](int from, int to, int cap, int cost) {
             G[from].push_back((edge){to, cap, cost, (int)(G[to].size())});
-            G[to].push_back((edge){from, 0, -cost, (int)(G[from].size()) - 1});
+            G[to].push_back((edge){from, cap, cost, (int)(G[from].size()) - 1});
         };
 
         cout << "OK" << endl;
@@ -71,6 +71,7 @@ int main() {
         cout << "KK" << endl;
 
         auto min_cost_flow = [&](int s, int t, int f) {
+            // cout << "********** " << s << " " << t << endl;
             int res = 0;
             const int INF = 1 <<  28;
 
@@ -91,6 +92,8 @@ int main() {
                                 prevv[e.to] = v;
                                 preve[e.to] = i;
                                 update = true;
+
+                                cout << "Update: " << v << " to " << e.to << " , dist = " << dist[e.to] << endl;
                             }
                         }
                     }
@@ -110,6 +113,8 @@ int main() {
                     e.cap -= d;
                     G[v][e.rev].cap += d;
                 }
+
+                cout << "flow: " << d << endl;
             }
 
             return res;
