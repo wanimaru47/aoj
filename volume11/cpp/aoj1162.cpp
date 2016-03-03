@@ -62,9 +62,9 @@ int main() {
         // }
         // cout << "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$" << endl;
 
-        auto add_edge = [&](int from, int to, int cap, int cost, int cmp) {
-            G[from].push_back((edge){to, cap, cost, (int)(G[to].size()), cmp});
-            G[to].push_back((edge){from, cap, cost, (int)(G[from].size()) - 1, cmp});
+        auto add_edge = [&](int from, int to, int cap, int cost) {
+            G[from].push_back((edge){to, cap, cost, (int)(G[to].size())});
+            G[to].push_back((edge){from, cap, cost, (int)(G[from].size()) - 1});
         };
 
         vector<mat> CC(C);
@@ -86,12 +86,12 @@ int main() {
 
             for (int j = 0; j < N; j++) {
                 for (int k = j; k < N; k++) {
-                    cout << j << " " << k << " ";
+                    // cout << j << " " << k << " ";
                     if ((int)CC[i][j][k] < INF) {
-                        cout << "OK";
-                        add_edge(j, k, 1, c_cost[i][(int)CC[i][j][k]], i);
+                        // cout << "OK";
+                        add_edge(j, k, 1, c_cost[i][(int)CC[i][j][k]]);
                     }
-                    cout << endl;
+                    // cout << endl;
                 }
             }
         }
