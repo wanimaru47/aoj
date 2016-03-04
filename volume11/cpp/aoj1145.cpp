@@ -7,22 +7,32 @@ auto ispare = [](char c) {if (c == '(') return 1; if (c == ')') return -1; retur
 string S;
 int N;
 
-string dfs(string s) {
+string dfs(string s, int count) {
+    if (count > N) return "";
     string res = "";
 
-    int i;
-    for (i = 0; i < s.size(); i++) {
-        if (isalf(s[i])) res += s[i];
-        else break;
-    }
+    if (isalf(s[0])) {
+        int i;
+        for (i = 0; i < s.size(); i++) {
+            if (isalf(s[i])) res += s[i];
+            else break;
+        }
+        
+        res += dfs(string(s.being() + i, s.end()), count + res.size());
+    } else {
+        string num = "";
 
-    string num = "";
+        int i = 0;
+        while (isnum(s[i])) num += s[i++];
 
+        string tmp = "";
+        if (ispare(s[i])) { // paretheese
+            int j = 0;
+            i++;
+            while (j > 0) {
 
-    string tmp(s.begin() + i, s.end());
-
-    if (tmp.size()) {
-        res += dfs();
+            }
+        // charactor
     }
 }
 
