@@ -17,15 +17,15 @@ int main() {
         bool flag = false;
         for (int i = 0; !flag && i < n; i++) {
             if (i > 0 && a[i-1] == INF && a[i] == INF) flag = true;
-            if (i > 0 && a[i-1] != INF && a[i] != INF && a[i] <= a[i-1]) flag = true;
-            if (i + 1 < n && a[i+1] != INF && a[i] != INF && a[i] >= a[i+1]) flag = true;
+            if (i % 2 && a[i-1] != INF && a[i] != INF && a[i] <= a[i-1]) flag = true;
+            if (i + 1 < n && i % 2 == 0 && a[i+1] != INF && a[i] != INF && a[i] >= a[i+1]) flag = true;
             if (a[i] == INF) {
-                if (i % 2 == 0) {
-                    if (i > 0) u = min(u, a[i-1]-1);
-                    if (i + 1 < n) u = min(u, a[i+1]-1);
-                } else {
+                if (i % 2) {
                     if (i > 0) l = max(l, a[i-1]+1);
                     if (i + 1 < n) l = max(l, a[i+1]+1);
+                } else {
+                    if (i > 0) u = min(u, a[i-1]-1);
+                    if (i + 1 < n) u = min(u, a[i+1]-1);
                 }
             }
         }
