@@ -23,7 +23,7 @@ int main ()
             res += (ins[i] == 'n' ? -90.0 : 90.0) / d;
             d *= 2.0;
         }
-        
+
         int t = 1;
         while (abs(res) > (int)((abs(res)))) {
             res *= 2;
