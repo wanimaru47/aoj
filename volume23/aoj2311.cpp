@@ -29,10 +29,9 @@ int main() {
     }
 
     int turn = 1;
-    int noChangeCount = 0;
+    int pass = 0;
     while (1) {
         int tx(-1), ty(-1);
-        int dir;
         int count = 1;
         for (int i = 0; i < 8; i++) {
             for (int j = 0 ; j < 8; j++) {
@@ -76,8 +75,10 @@ int main() {
                     while (inFloor(x, y) && d[(x+=dx[(i+4)%8])][(y+=dy[(i+4)%8])] == rev(turn))
                         d[x][y] = turn;
             }
-        } else noChangeCount++;
-        if (noChangeCount >= 2) break;
+            pass = 0;
+        } else pass++;
+        if (pass == 2) break;
+
         turn = rev(turn);
     }
 
