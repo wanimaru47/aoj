@@ -31,78 +31,33 @@ int main() {
     int turn = 1;
     int noChangeCount = 0;
     while (1) {
-        queue<P> que;
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0 ; j < 8; j++) {
-                if (d[i][j] == turn) {
-                    bool flag = false;
-                    for (int k = 0; k < 8; k++) {
-                        int nx = i + dx[k];
-                        int ny = j + dy[k];
-                        if (inFloor(nx, ny) && d[nx][ny] == rev(turn)) {
-                            flag = true;
-                        }
-                    }
-                    if (flag) que.push(P(i,j));
-                }
-            }
-        }
-
-        if (que.empty()) break;
-
         int tx(-1), ty(-1);
         int dir;
-        int count = 0;
-
-        while (que.size()) {
-            P p = que.front();
-            que.pop();
-
-            int x = p.first;
-            int y = p.second;
-
-            for (int i = 0; i < 8; i++) {
-                int nx = x + dx[i];
-                int ny = y + dy[i];
-
-                if (inFloor(nx, ny) && d[nx][ny] == rev(turn)) {
+        int count = 1;
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0 ; j < 8; j++) {
+                if (d[i][j] == 0) {
                     int count_ = 0;
-                    while (inFloor(nx, ny) && d[nx][ny] == rev(turn)) {
-                        count_++;
-                        nx = nx + dx[i];
-                        ny = ny + dy[i];
+                    for (int k = 0; k < 8; k++) {
+                        int x = i + dx[k];
+                        int y = j + dy[k];
+                        int tmp = 0;
+                        while (inFloor(x, y) && d[x][y] == rev(turn)) {
+                            x += dx[k], y += dy[k];
+                            tmp++;
+                        }
+                        if (inFloor(x,y) && d[x][y] == turn) count_ += tmp;
                     }
 
-                    if (inFloor(nx, ny) && d[nx][ny] == 0) {
-                        if (count < count_) {
-                            tx = nx;
-                            ty = ny;
-                            count = count_;
-                            dir = (i + 4) % 8;
-                        } else if (count == count_) {
-                            if (turn == 1) {
-                                if (tx > nx) {
-                                    tx = nx;
-                                    ty = ny;
-                                    dir = (i + 4) % 8;
-                                } else if (tx == nx) {
-                                    if (ty > ny) {
-                                        ty = ny;
-                                        dir = (i + 4) % 8;
-                                    }
-                                }
-                            } else {
-                                if (tx < nx) {
-                                    tx = nx;
-                                    ty = ny;
-                                    dir = (i + 4) % 8;
-                                } else if (tx == nx) {
-                                    if (ty < ny) {
-                                        ty = ny;
-                                        dir = (i + 4) % 8;
-                                    }
-                                }
-                            }
+                    if (count < count_ || (count_ > 0 && tx < 0)) {
+                        tx = i; ty = j; count = count_;
+                    } else if (count == count_) {
+                        if (turn == 1) {
+                            if (tx > i) tx = i, ty = j;
+                            else if (tx == i && ty > j) ty = j;
+                        } else {
+                            if (tx < i) tx = i, ty = j;
+                            else if (tx == i && ty < j) ty = j;
                         }
                     }
                 }
@@ -110,21 +65,19 @@ int main() {
         }
 
         if (tx > -1) {
-            bool flag = true;
-            while (d[tx][ty] != turn) {
-                d[tx][ty] = turn;
-                tx += dx[dir];
-                ty += dy[dir];
-                cout << ty << " " << ty << endl;
-                noChangeCount = 0;
-                flag = false;
+            d[tx][ty] = turn;
+            for (int i = 0; i < 8; i++) {
+                int x = tx + dx[i];
+                int y = ty + dy[i];
+                while (inFloor(x, y) && d[x][y] == rev(turn)) {
+                    x += dx[i], y += dy[i];
+                }
+                if (inFloor(x, y) && d[x][y] == turn)
+                    while (inFloor(x, y) && d[(x+=dx[(i+4)%8])][(y+=dy[(i+4)%8])] == rev(turn))
+                        d[x][y] = turn;
             }
-            if (flag) noChangeCount++;
         } else noChangeCount++;
-        cout << "in the loog" << endl;
-
         if (noChangeCount >= 2) break;
-
         turn = rev(turn);
     }
 
