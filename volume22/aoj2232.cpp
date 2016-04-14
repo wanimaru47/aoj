@@ -13,7 +13,23 @@ bool check(vector<string> &v) {
     return true;
 }
 
+void fall(vector<string> &v) {
+    for (int i = 0; i < W; i++) {
+        for (int j = H - 1; j > -1; j--) {
+            if (v[j][i] == '.') {
+                int k = 1;
+                while (j - k > -1 && v[j - k][i] == '.') k++;
+                if (j - k > -1) {
+                    v[j][i] = v[j - k][i];
+                    v[j - k][i] = '.';
+                }
+            }
+        }
+    }
+}
+
 bool solve(vector<string> &v) {
+    fall(v);
     if (check(v)) return true;
 
     mat cw(H, vec(W, 0));
@@ -36,16 +52,12 @@ bool solve(vector<string> &v) {
 
     bool changed = false;
     for (int i = 0; i < H; i++) {
-        for (int j = W - 1; j > -1; j--) {
+        for (int j = W - 1; j >= N - 1; j--) {
             if (cw[i][j] >= N) {
                 changed = true;
-                for (int k = j; ; k--) {
-                    v[i][k] = '.';
-                    if (cw[i][k] == 1) {
-                        cw[i][k] = 0;
-                        break;
-                    }
-                    cw[i][k] = 0;
+                for (int k = cw[i][j] - 1; k > -1; k--) {
+                    v[i][j - k] = '.';
+                    cw[i][j - k] = 0;
                 }
             }
         }
@@ -55,33 +67,17 @@ bool solve(vector<string> &v) {
         for (int j = H - 1; j > -1; j--) {
             if (ch[j][i] >= N) {
                 changed = true;
-                for (int k = j; ; k--) {
-                    v[k][i] = '.';
-                    if (ch[k][i] == 1) {
-                        ch[k][i] = 0;
-                        break;
-                    }
-                    ch[k][i] = 0;
+                for (int k = ch[j][i] - 1; k > -1; k--) {
+                    v[j - k][i] = '.';
+                    ch[j - k][i] = 0;
                 }
             }
         }
     }
+
+    fall(v);
 
     if (!changed) return false;
-
-    for (int i = 0; i < W; i++) {
-        for (int j = H - 1; j > -1; j--) {
-            if (v[j][i] == '.') {
-                int k = 1;
-                while (j - k > -1 && v[j - k][i] == '.') k++;
-                if (j - k > -1) {
-                    v[j][i] = v[j - k][i];
-                    v[j - k][i] = '.';
-                }
-            }
-        }
-    }
-
     return solve(v);
 }
 
