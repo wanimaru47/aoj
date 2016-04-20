@@ -5,15 +5,15 @@ typedef vector<int> vec;
 typedef vector<vec> mat;
 
 const int INF = 1 << 28;
-long long int sum;
+int sum;
 string num;
 
 int main() {
     while (cin >> sum >> num, sum || num != "0") {
-        map<long long int,vec> m;
-        long long int target = -1;
+        map<int,vec> m;
+        int target = -1;
         for (int i = 0; i < 1 << (num.size() - 1); i++) {
-            long long int tmp = 0;
+            int tmp = 0;
             int pre = 0;
             for (int j = 0; j < num.size() - 1; j++) {
                 if (i & (1 << j)) {
@@ -47,7 +47,7 @@ int main() {
             }
             cout << endl;
         } else {
-            cout << "reject" << endl;
+            cout << "rejected" << endl;
         }
     }
 }
