@@ -6,57 +6,70 @@ typedef vector<int> vec;
 typedef vector<vec> mat;
 
 const int INF = 1<<28;
-int N, Q;
 
-void solve() {
-    vector<set<int> > T(N+1);
-    vec rT(N+1);
-    rT[1] = 1;
+
+int Find(int p, vec& par) {
+    if (p == par[p]) return (p);
+    return (par[p] = Find(par[p], par));
+}
+
+void Merge(int x, int y, vec& par) {
+    x = Find(x, par), y = Find(y, par);
+    if (x != y) {
+        par[x] = y;
+    }
+}
+
+void dfs(int now, int p, vec& par, mat& T, vec& MarkedTime) {
+    if (MarkedTime[now] != MarkedTime[p] && MarkedTime[now] != INF) return ;
+    par[now] = p;
+    for (int i = 0; i < T[now].size(); i++) {
+        dfs(T[now][i], p, par, T, MarkedTime);
+    }
+}
+
+void solve(int N, int Q) {
+    mat T(N+1);
+    vec Tr(N+1);
+    Tr[1] = 1;
     for (int i = 2; i <= N; i++) {
-        int par; cin >> par;
-        T[par].insert(i);
-        rT[i] = par;
+        int v; cin >> v;
+        T[v].push_back(i);
+        Tr[i] = v;
     }
 
-    vector<bool> isleaf(N+1);
-    for (int i = 1; i <= N; i++)
-        if (T[i].size() == 0) isleaf[i] = true;
-
     vec MarkedTime(N+1, INF);
+    vec TimeToMarkedVertex(Q+1);
+    vec QueryTimeToVertex(Q+1);
     MarkedTime[1] = -1;
-    vector<set<int> > QueryTime(N+1);
     for (int i = 0; i < Q; i++) {
         char q;
         int v;
         cin >> q >> v;
-        if (q == 'M') MarkedTime[v] = min(MarkedTime[v], i);
-        else QueryTime[v].insert(i);
+        if (q == 'M') MarkedTime[v] = min(MarkedTime[v], i), TimeToMarkedVertex[i] = v;
+        else QueryTimeToVertex[i] = v;
     }
 
-    vector<bool> used(N+1, false);
-    priority_queue<P, vector<P> > que;
-    int now = 1;
-    int cost = 0;
-    while (true) {
-        for (auto i : QueryTime[now]) {
-            que.push(P(i, ));
-        }
-        QueryTime[now].clear();
-        while (que.size() > 0 && que.top() > MarkedTime[now]) {
-            cost += now;
-            que.pop();
-        }
-        if (T[now].size()) {
-            int next = *(T[now].begin());
-            T[now].erase(next);
-            now = next;
-        }
-        else
+    vec par(N+1);
+    for (int i = 1; i <= N; i++) par[i] = i;
+    for (int i = 1; i <= N; i++) {
+        if (MarkedTime[i] == INF) continue;
+        dfs(i, i, par, T, MarkedTime);
     }
+
+    long long int cost = 0LL;
+    for (int i = Q - 1; i > -1; i--) {
+        if (QueryTimeToVertex[i] > 0) cost += Find(par[QueryTimeToVertex[i]], par);
+        else if (i == MarkedTime[TimeToMarkedVertex[i]])
+            Merge(TimeToMarkedVertex[i], Tr[TimeToMarkedVertex[i]], par);
+    }
+
+    cout << cost << endl;
 }
 
 int main() {
-    while (cin >> N >> Q, N || Q) solve();
+    int N, Q;
+    while (cin >> N >> Q, N || Q) solve(N, Q);
 
     return 0;
 }
