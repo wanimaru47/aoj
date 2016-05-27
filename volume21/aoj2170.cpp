@@ -1,72 +1,62 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef long long int ll;
 typedef pair<int,int> P;
 typedef vector<int> vec;
 typedef vector<vec> mat;
 
-const int INF = 1 << 28;
+const int INF = 1<<28;
 int N, Q;
 
-void dfs(int now, int d, vec& depth, mat& v, vec& pre) {
-    depth[now] = d;
+void solve() {
+    vector<set<int> > T(N+1);
+    vec rT(N+1);
+    rT[1] = 1;
+    for (int i = 2; i <= N; i++) {
+        int par; cin >> par;
+        T[par].insert(i);
+        rT[i] = par;
+    }
 
-    for (int i = 0; i < v[now].size(); i++) {
-        if (depth[v[now][i]] > -1) {
-            pre[now] = v[now][i];
-            continue;
+    vector<bool> isleaf(N+1);
+    for (int i = 1; i <= N; i++)
+        if (T[i].size() == 0) isleaf[i] = true;
+
+    vec MarkedTime(N+1, INF);
+    MarkedTime[1] = -1;
+    vector<set<int> > QueryTime(N+1);
+    for (int i = 0; i < Q; i++) {
+        char q;
+        int v;
+        cin >> q >> v;
+        if (q == 'M') MarkedTime[v] = min(MarkedTime[v], i);
+        else QueryTime[v].insert(i);
+    }
+
+    vector<bool> used(N+1, false);
+    priority_queue<P, vector<P> > que;
+    int now = 1;
+    int cost = 0;
+    while (true) {
+        for (auto i : QueryTime[now]) {
+            que.push(P(i, ));
         }
-        dfs(v[now][i], d + 1, depth, v);
+        QueryTime[now].clear();
+        while (que.size() > 0 && que.top() > MarkedTime[now]) {
+            cost += now;
+            que.pop();
+        }
+        if (T[now].size()) {
+            int next = *(T[now].begin());
+            T[now].erase(next);
+            now = next;
+        }
+        else
     }
 }
 
 int main() {
-    while (cin >> N >> Q, N || Q) {
-        mat v(N);
-        for (int i = 1; i < N; i++) {
-            int a; cin >> a;
-            a--;
-            v[i].push_back(a);
-            v[a].push_back(i);
-        }
-
-        vec depth(N, -1);
-        vec pre(N);
-        dfs(0, 0, depth, v, pre);
-
-        vec m(N, INF);
-        vector<priority_queue<int, vec, greator<int> > > t(N);
-        set<int> d;
-        for (int i = 0; i < Q; i++) {
-            char a;
-            int b;
-            cin >> a >> b;
-            if (a == 'M') m[b-1] = min(i, m[b-1]);
-            else {
-                t[b-1].push(i);
-                if (v[b-1].size() == 1) d.insert(b-1);
-            }
-        }
-
-        priority_queue<P, vector<P>, greator<P> > que;
-        for (auto i : d) {
-            que.push(P(depth[i], i));
-        }
-
-        ll res = 0;
-        while (que.size()) {
-            P p = que.top(); que.pop();
-            int now = p.second;
-
-            if (m[now] != INF) {
-                while (1) {
-                    int p = t[now].top();
-                    if (p < m[now]) res += (ll)now;
-                }
-            }
-        }
-    }
+    while (cin >> N >> Q, N || Q) solve();
 
     return 0;
 }
