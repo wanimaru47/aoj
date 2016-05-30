@@ -35,11 +35,14 @@ void solve() {
     set<string> ans;
     queue<string> que;
     for (auto i : m[sSet[0]]) que.push(i);
+    map<string,bool> used;
     while (que.size()) {
         string str = que.front(); que.pop();
+        used[str] = true;
         if (m.find(str) == m.end()) ans.insert(str);
         else {
-            for (auto i : m[str]) que.push(i);
+            for (auto i : m[str])
+                if (used.find(i) == used.end()) que.push(i);
         }
     }
 
