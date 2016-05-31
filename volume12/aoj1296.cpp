@@ -7,7 +7,7 @@ int N;
 vector<string> A, B;
 string y, s;
 
-string replace(string str, string pattern, string object) {
+string sed(string str, string pattern, string object) {
     string ret;
     while (str.find(pattern) != string::npos) {
         ret += string(str.begin(), str.begin() + str.find(pattern));
@@ -26,7 +26,7 @@ int dfs(string str, int d) {
 
     int ret = INF;
     for (int i = 0; i < N; i++) {
-        string tmp = replace(str, A[i], B[i]);
+        string tmp = sed(str, A[i], B[i]);
         if (tmp == str) continue;
         ret = min(ret, dfs(tmp, d + 1));
     }
