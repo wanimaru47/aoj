@@ -5,7 +5,6 @@ vector<string> opr{"->", "+", "*", "-"};
 vector<string> num{"1", "2", "3", "4"};
 
 void add_para(string &exp) {
-    // cout << ">> " << exp << endl;
     auto find_idx = exp.find("4");
     while (find_idx != string::npos) {
         if (exp[find_idx + 1] == '(') {
@@ -27,12 +26,9 @@ void add_para(string &exp) {
 
         find_idx = exp.find("4");
     }
-
-    // cout << "<< " << exp << endl;
 }
 
 bool calc(string exp, int bits) {
-    // cout << exp << endl;
     if (exp == "T") return true;
     else if (exp == "F") return false;
     else if (exp.size() == 1) {
@@ -48,12 +44,10 @@ bool calc(string exp, int bits) {
         if (count == 0 && '1' <= exp[i] && exp[i] <= '5') idx = i;
     }
 
-    // cout << "idx=" << idx << endl;
-
     bool lhs = calc(string(exp.begin() + 1, exp.begin() + idx), bits);
     bool rhs = calc(string(exp.begin() + idx + 1, exp.end() - 1), bits);
 
-    if (exp[idx] == '1') return (lhs && !rhs);
+    if (exp[idx] == '1') return !(lhs && !rhs);
     if (exp[idx] == '2') return (lhs || rhs);
     if (exp[idx] == '3') return (lhs && rhs);
 }
@@ -76,7 +70,6 @@ void solve(string str) {
     bool flag = true;
     for (int i = 0; i < (1 << 11); i++) {
         if (calc(exp1, i) != calc(exp2, i)) {
-            cout << i << endl;
             flag = false;
             break;
         }
