@@ -76,6 +76,7 @@ void solve(string str) {
     bool flag = true;
     for (int i = 0; i < (1 << 11); i++) {
         if (calc(exp1, i) != calc(exp2, i)) {
+            cout << i << endl;
             flag = false;
             break;
         }
