@@ -36,6 +36,7 @@ bool calc(string exp, int bits) {
         else return false;
     }
 
+    if (exp.size() < 3) return false;
     if (exp[1] == '5') return !calc(string(exp.begin() + 2, exp.end() - 1), bits);
     int idx;
     for (int i = 1, len = exp.size(), count = 0; i < len - 1; i++) {
