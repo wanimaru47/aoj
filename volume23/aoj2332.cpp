@@ -2,41 +2,48 @@
 using namespace std;
 
 const int INF = 1 << 28;
+int N;
+
+int create_next(vector<int>& next, vector<int>& p, int now) {
+    if (!p[now]) return next[now] = now;
+    if (next[now] == -2) return next[now] = INF;
+    if (next[now] > -1) return next[now];
+    next[now] = -2;
+    int now_ = now + p[now];
+    if (now_ < 0) now_ = 0;
+    else if (now_ >= N) now_ = N - 1;
+    return next[now] = create_next(next, p, now_);
+}
 
 int main() {
-    int N;
     cin >> N;
     vector<int> p(N);
     for (auto &i : p) cin >> i;
 
     vector<int> dp(N, INF);
     dp[0] = 0;
-
+    vector<int> next(N, -1);
     for (int i = 0; i < N; i++) {
-        if (dp[i] == INF) continue;
-        for (int j = 1; j <= 6; j++) {
-            int next = i + j;
-            if (next < 0) next = 0;
-            if (next >= N) next = N - 1;
-            vector<bool> flag(N, false);
-            flag[next] = true;
-            bool cnt = false;
-            int next_ = next + p[next];
-            if (next_ < 0) next_ = 0;
-            if (next_ >= N) next_ = N - 1;
-            while(next != next_) {
-                next = next_;
-                if (flag[next]) {cnt = true; break;}
-                flag[next] = true;
-                next_ = next + p[next];
-                if (next_ < 0) next_ = 0;
-                if (next_ >= N) next_ = N - 1;
-            }
-            if (cnt) continue;
-            if (next < 0) next = 0;
-            if (next >= N) next = N - 1;
+        if (!p[i]) next[i] = i;
+        else create_next(next, p, i);
+    }
 
-            dp[next] = min(dp[next], dp[i] + 1);
+    priority_queue<int, vector<int>, greater<int> > que;
+    que.push(0);
+
+    while (que.size()) {
+        int now = que.top(); que.pop();
+
+        for (int  i = 1; i <= 6; i++) {
+            int nx = now + i;
+            if (nx >= N) nx = N - 1;
+            nx = next[nx];
+
+            if (nx == INF) continue;
+            if (dp[now] + 1 < dp[nx]) {
+                dp[nx] = dp[now] + 1;
+                que.push(nx);
+            }
         }
     }
 
