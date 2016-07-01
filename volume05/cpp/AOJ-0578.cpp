@@ -1,28 +1,30 @@
-#include "iostream"
-#include "string.h"
+#include <bits/stdc++.h>
 using namespace std;
 
-int search(int carsor, int ) {
-	if () {
-		
-	}
-}
+int main() {
+    int N;
+    cin >> N;
+    string str;
+    cin >> str;
+    int ans = 0;
+    while (N--) {
+        string old;
+        cin >> old;
 
-int main(void)
-{
-	int numint, count = 0, size, sizeK;
-	char kanban[26], older[101];
-	cin >> num >> kanban;
-	sizeK = sizeof()
-	for (int i = 0; i < num; i++) {
-		cin >> older;
-		size = sizeof(older);
-		for (int k = 0; k < size; k++) {
-			for (int j = 0; j < sizeK; j++) {
-				if
-			}
-		}
-	}
-	
-	return 0;
+        bool flag = false;
+        for (int i = 0, len = old.size(); i < len; i++) {
+            for (int j = 1; i + (j - 1) * ((int)str.size() - 1) + (int)str.size() <= len; j++) {
+                bool f = true;
+                for (int k = 0, l = str.size(); f && k < l; k++) {
+                    if (str[k] != old[i + k * j]) f = false;
+                }
+                if (f) flag = true;
+            }
+            if (flag) break;
+        }
+        if (flag) ans++;
+    }
+    cout << ans << endl;
+
+    return 0;
 }
