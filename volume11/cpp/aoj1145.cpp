@@ -1,45 +1,109 @@
 #include <bits/stdc++.h>
 using namespace std;
-auto isalf = [](char c) {if ('A' <= c && c <= 'Z') return true; return false; };
-auto isnum = [](char c) {if ('0' <= c && c <= '9') return true; return false; };
-auto ispare = [](char c) {if (c == '(') return 1; if (c == ')') return -1; return 0; };
 
-string S;
+string str;
+string ans;
 int N;
 
-string dfs(string s, int count) {
-    if (count > N) return "";
-    string res = "";
+int cal(string s) {
+    if (s == "") return 1;
+    stringstream ss;
+    ss << s;
+    int ret;
+    ss >> ret;
+    return ret;
+}
 
-    if (isalf(s[0])) {
-        int i;
-        for (i = 0; i < s.size(); i++) {
-            if (isalf(s[i])) res += s[i];
-            else break;
-        }
-        
-        res += dfs(string(s.being() + i, s.end()), count + res.size());
-    } else {
-        string num = "";
+string make_str(string s, int left) {
+    if (s.size() == 1) return s;
 
-        int i = 0;
-        while (isnum(s[i])) num += s[i++];
+    string ret;
+    string ch;
+    string num;
+    for (int i = 0, len = s.size(), count = 0; i < len; i++) {
+        if (!count && '0' <= s[i] && s[i] <= '9') num += s[i];
+        else {
+            ch += s[i];
+            if (s[i] == '(') count++;
+            if (s[i] == ')') count--;
+            if (count == 0) {
+                if(ch.size() > 0 && ch[0] == '(') {
+                    ch.erase(ch.begin());
+                    ch.erase(ch.end()-1);
+                }
 
-        string tmp = "";
-        if (ispare(s[i])) { // paretheese
-            int j = 0;
-            i++;
-            while (j > 0) {
-
+                string tmp = make_str(ch, left + ret.size());
+                for (int j = 0, len = cal(num); j < len; j++) {
+                    if (ret.size() + left > N + 1) break;
+                    ret += tmp;
+                }
+                ch = "";
+                num = "";
             }
-        // charactor
+        }
     }
+
+    return ret;
+}
+
+void calc_char(int c, string s, int sum) {
+    string ans_str = make_str(s, N - sum);
+    string ans_;
+    for (int i = 0; i < c; i++) {
+        ans_ += ans_str;
+        if (ans_.size() > sum + 1) break;
+    }
+    ans = ans_[sum];
+}
+
+int dfs(string s, int left) {
+    if (s.size() == 1) return 1;
+    int sum = 0;
+
+    string num;
+    string ch;
+    for (int i = 0, len = s.size(), count = 0; i < len; i++) {
+        if (!count && '0' <= s[i] && s[i] <= '9') num += s[i];
+        else {
+            ch += s[i];
+            if (s[i] == '(') count++;
+            if (s[i] == ')') count--;
+            if (count == 0) {
+                int c = cal(num);
+                if(ch.size() > 0 && ch[0] == '(') {
+                    ch.erase(ch.begin());
+                    ch.erase(ch.end()-1);
+                }
+
+                int tmp = dfs(ch, sum + left);
+                if (tmp < 0) return -1;
+                sum += c * tmp;
+                if (sum + left > N) {
+                    calc_char(c, ch, N - (sum - c * tmp) - left);
+                    return -1;
+                }
+                ch = "";
+                num = "";
+            }
+        }
+    }
+
+    return sum;
+}
+
+void solve() {
+    ans = "0";
+
+    if (str.size() > 1)
+        dfs(str, 0);
+    else if (N == 0)
+        ans = str;
+
+    cout << ans << endl;
 }
 
 int main() {
-    while (cin >> S >> N, S != "0" && N != 0) {
-        tmp = "";
-    }
+    while (cin >> str >> N, str != "0" || N) solve();
 
     return 0;
 }
