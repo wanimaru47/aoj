@@ -32,9 +32,6 @@ int main () {
             auto rstr = str;
             reverse(rstr.begin(), rstr.end());
 
-            // for (auto i : str) cout << i; cout << endl;
-            // for (auto i : rstr) cout << i; cout << endl;
-
             stringstream ss;
             ss << rstr << " " << str;
             int A, B;
