@@ -1,32 +1,21 @@
-#include "iostream"
+#include <bits/stdc++.h>
 using namespace std;
 
-int main(void)
-{
-	int day=100, num1, num2, ckt1, ckt2;
-	int ans1,ans2;
-	cin >> day;
-	for (int i = 0; i < day; i++)
-	{
-		cin >> num1 >> num2 >> ckt1 >> ckt2;
-		//cout << num1 << num2 << ckt1 << ckt2 << endl;
-		ans1 = num1*ckt1 + num2*ckt2;
-		ans2 = ans1;
-		if(ckt1 > 4 || ckt2 > 1) {
-			if (ckt1 > 4 && ckt2 > 1) {
-				ans2 = ans1*0.8;
-			}else if(ckt1 > 4) {
-				ans2 = (num1*ckt1 + num2*2)*0.8;
-			}else if(ckt2 > 1) {
-				ans2 = num1*5 + num2*ckt2;
-			}
-		}
-		if (ans1 < ans2) {
-			cout << ans1 << endl;
-		}else {
-			cout << ans2 << endl;
-		}
-	}
+int main() {
+    int N;
+    cin >> N;
+    while (N--) {
+        int x, y, b, p;
+        cin >> x >> y >> b >> p;
+        int sum = x * b + y * p;
+        if (b >= 5 && p >= 2) sum = sum * 8 / 10;
+        else {
+            int tmp = x * max(b, 5) + y * max(p, 2);
+            tmp = tmp * 8 / 10;
+            sum = min(tmp, sum);
+        }
+        cout << sum << endl;
+    }
 
-	return 0;
+    return 0;
 }
