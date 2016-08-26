@@ -1,53 +1,200 @@
 #include <bits/stdc++.h>
-#define REP(i,a,b) for(int i=a;i<b;i++)
-#define rep(i,n) REP(i,0,n)
-#define isUruu(y) ((y % 4 || (y % 100 == 0 && y % 400)) ? false : true)
 using namespace std;
 
-typedef long long ll;
-typedef pair<int,int> P;
-typedef unsigned int uint;
-typedef vector<int> V;
-typedef vector<vector<int> > VV;
-typedef priority_queue<P, vector<P>, greater<P> > PQ;
+typedef long long int ll;
 
-const int INF = 1 << 28;
-const int MOD = 1e9+7;
-const double EPS = 1e-9;
-const int dx[] = {0,1,0,-1};
-const int dy[] = {1,0,-1,0};
+const ll MOD = 1e9+7;
 
-int main()
-{
-    int n, m, k;
-    while (cin >> n >> m >> k, n + k + m) {
-        vector<string> f, t, from(n), to(n);
-        vector<set<string> > last(m + 1);
-        vector<map<string, ll> > vms(m + 1);
-        vector<map<string, set<string> > > vmss (m + 1);
-        rep (i, n) {
-            cin >> from[i] >> to[i];
-            last[from[i].size()].insert(from[i]);
-            last[to[i].size()].insert(to[i]);
-            vms[from[i].size()][from[i]] = 1;
-            vms[to[i].size()][to[i]] = 1;
-            vmss[from[i].size()][from[i]].insert(from[i]);
-            vmss[to[i].size()][to[i]].insert(to[i]);
+struct Node {
+    vector<int> accept;
+    map<char,Node*> chd;
+};
+
+class PMA {
+private :
+    Node* root;
+    const char failure = 0;
+
+public :
+    PMA () {
+        root = new Node();
+    }
+
+    Node* getRoot() {
+        return root;
+    }
+
+    void show (Node* now, string prefix) {
+        for (auto i : now->chd) {
+            cout << prefix << i.first << endl;
+            show(i.second, prefix + '>');
         }
+    }
 
-        vector<string> S(k);
-        rep (i,k) {
-            cin >> S[i];
-        }
-
-        REP (i,1,m) {
-            rep (j,n) {
-                if (last[i].find(from[i]) != last[i].end()) {
-                    
+    void build(vector<string> vstr) {
+        int vlen = vstr.size();
+        vector<vector<pair<int,int> > > substring(vlen);
+        for (int i = 0; i < vlen; i++) {
+            for (int j = 0; j < vlen; j++) {
+                if (i == j) continue;
+                auto pos = vstr[i].find(vstr[j]);
+                if (pos != string::npos) {
+                    substring[i].push_back(make_pair(j, pos + vstr[j].size()-1));
                 }
             }
         }
+        for (int i = 0; i < vlen; i++) {
+            Node* now = root;
+            for (int j = 0; j < vstr[i].size(); j++) {
+                char s = vstr[i][j];
+                if (now->chd.find(s) == now->chd.end())
+                    now->chd[s] = new Node();
+                now = now->chd[s];
+                for (auto p : substring[i]) {
+                    int v = p.first;
+                    int ps = p.second;
+                    if (ps == j) {
+                        now->accept.push_back(v);
+                    }
+                }
+            }
+            now->accept.push_back(i);
+        }
+
+
+        queue<Node*> que;
+        string symbol_array = "abcdefghijklmnopqrstuvwxyz";
+        for (auto s : symbol_array) {
+            if (root->chd.find(s) == root->chd.end()) {
+                root->chd[s] = root;
+            } else {
+                root->chd[s]->chd[failure] = root;
+                que.push(root->chd[s]);
+            }
+        }
+
+        while (!que.empty()) {
+            Node* now = que.front();
+            que.pop();
+
+            for (auto& v : now->chd) {
+                if (v.first == failure) continue;
+                que.push(v.second);
+                Node* rev = now->chd[failure];
+                cout << "> OK" << v.first << endl;
+                // while (!rev->chd[v.first])
+                while (rev->chd.find(v.first) == rev->chd.end())
+                    rev = rev->chd[failure];
+                cout << ">>" << endl;
+                now->chd[v.first]->chd[failure] = rev->chd[v.first];
+            }
+        }
+        cout << ">>>" << endl;
     }
-                
+
+    void match(string str, vector<int>& result) {
+        Node* now = root;
+        for (auto s : str) {
+            while (now->chd.find(s) == now->chd.end())
+                now = now->chd[failure];
+            now = now->chd[s];
+            for (auto i : now->accept) {
+                result[i]++;
+            }
+        }
+    }
+
+    Node* next(string str, Node* now, int& count) {
+        for (auto s : str) {
+            while (now->chd.find(s) == now->chd.end())
+                now = now->chd[failure];
+            now = now->chd[s];
+            count = count + 0;
+            printf("now = %p in next \n", now);
+            cout << now->accept.size() << endl;
+            for (auto i : now->accept) {
+                cout << "match: " << i << endl;
+                count++;
+            }
+        }
+
+        return now;
+    }
+};
+
+int main() {
+    int N, M, K;
+    while (cin >> N >> M >> K, N || M || K) {
+        PMA pma;
+        vector<string> from(N), to(N), season(K);
+        map<string,int> ston;
+        vector<string> ntos;
+        for (int i = 0; i < N; i++) {
+            cin >> from[i] >> to[i];
+            if (ston.find(from[i]) == ston.end())
+                ston[from[i]] = ston.size()-1, ntos.push_back(from[i]);
+            if (ston.find(to[i]) == ston.end())
+                ston[to[i]] = ston.size()-1, ntos.push_back(to[i]);
+        }
+
+        vector<vector<int> > next(ston.size());
+        for (int i = 0; i < N; i++) {
+            next[ston[from[i]]].push_back(ston[to[i]]);
+        }
+
+        for (int i = 0; i < K; i++) cin >> season[i];
+        cout << "OK" << endl;
+        pma.build(season);
+
+        vector<vector<vector<map<Node*,ll> > > > dp(M+1);
+        for (auto& i : dp) {
+            i.resize(ston.size()+1);
+            for (auto& j : i) {
+                j.resize(2);
+            }
+        }
+
+        for (int i = 0; i < N; i++) {
+            Node* now = pma.getRoot();
+            int count = 0;
+            now = pma.next(from[i], now, count);
+            if (count > 1) continue;
+            dp[from[i].size()][ston[from[i]]][count][now] = 1LL;
+        }
+
+        for (int i = 0; i < M; i++) {
+            for (int j = 0; j < (int)ston.size(); j++) {
+                for (int k = 0; k < 2; k++) {
+                    for (auto now : dp[i][j][k]) {
+                        for (auto nx : next[j]) {
+                            Node* node = now.first;
+                            ll num = now.second;
+                            printf("now = %p\n", node);
+                            cout << i << " " << ntos[j] << " " << k << " " << ntos[nx] << endl;
+                            int count = k;
+                            node = pma.next(ntos[nx], node, count);
+                            cout << i+ntos[nx].size() << " " << nx << " " << count << " " << num << endl;
+                            printf("now = %p\n", node);
+                            if (count <= 1 && i+ntos[nx].size() <= M) {
+                                dp[i+ntos[nx].size()][nx][count][node] += num;
+                                dp[i+ntos[nx].size()][nx][count][node] %= MOD;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        ll ans = 0LL;
+        for (int i = 0; i < (int)ston.size(); i++) {
+            for (auto now : dp[M][i][1]) {
+                ans += now.second;
+                ans %= MOD;
+            }
+        }
+
+        cout << ans << endl;
+    }
+
     return 0;
 }
