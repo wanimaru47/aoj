@@ -20,7 +20,7 @@ int main ()
         }
 
         sort(data.begin(), data.end());
-        
+
         for (int i = 0; i < m; i++) {
             if (v[data[i].second.first]) v[data[i].second.second] = true; 
         }
