@@ -93,7 +93,8 @@ public :
     }
 };
 
-int main() {
+int 
+main() {
     int N, M, K;
     while (cin >> N >> M >> K, N || M || K) {
         PMA pma;
