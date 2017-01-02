@@ -19,7 +19,6 @@ int main() {
                 if (dp[i-2][j+1] && abs(v[j] - v[j + i - 1]) < 2) {
                     dp[i][j] = 1;
                 } else {
-                    vector<int> flag(i+1);
                     for (int k = 2; j + k < j + i; k += 2) {
                         if (dp[k][j] && dp[i - k][j + k]) {
                             dp[i][j] = 1;
