@@ -1,4 +1,4 @@
-#include <bits/st dc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 pair<int,int> get_mid(string t) {
@@ -22,15 +22,35 @@ pair<string,string> get_subtree(string t, int mid_s, int mid_e) {
     string b;
 
     a = string(t.begin() + 1, t.begin() + mid_s -1);
-    b = string(t.begin() + mid_e + 1, t.end() - 1);
+    b = string(t.begin() + mid_e + 2, t.end() - 1);
 
     return make_pair(a,b);
 }
 
-string get_tree(string t) {
-    string ret;
+string get_tree(string a, string b) {
+    if (a.size() == 0 || b.size() == 0) {
+        return "";
+    }
 
-    auto m = get
+    auto ma = get_mid(a);
+    auto sta = get_subtree(a, ma.first, ma.second);
+
+    auto mb = get_mid(b);
+    auto stb = get_subtree(b, mb.first, mb.second);
+
+    stringstream ss, cc;
+    ss << string(a.begin() + ma.first + 1, a.begin() + ma.second)
+        + " "
+        + string(b.begin() + mb.first + 1, b.begin() + mb.second);
+
+    int A, B;
+    ss >> A >> B;
+    cc << (A+B);
+    string m;
+    cc >> m;
+
+    string ret = "(" + get_tree(sta.first, stb.first) + ")["
+        + m + "](" + get_tree(sta.second, stb.second) + ")";
 
     return ret;
 }
